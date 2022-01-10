@@ -3,7 +3,7 @@ serve-docs:
 	npx docsify serve ./docs
 
 serve-landing:
-	npx browser-sync start -s -w
+	npx browser-sync start -w -s landing
 
 deploy-landing:
 	sshpass -e rsync -av --delete ./landing/ \
