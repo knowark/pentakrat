@@ -33,7 +33,7 @@ electoral processes* by providing the resources they need while preventing
 their coercion by selfish agendas. In short, it is a way to *invest with
 democratic purpose*.
 
-## Structure
+# Structure
 
 
 ```graphviz
