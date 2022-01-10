@@ -33,14 +33,29 @@ electoral processes* by providing the resources they need while preventing
 their coercion by selfish agendas. In short, it is a way to *invest with
 democratic purpose*.
 
-![tree](tree_structure.png)
+## Structure
+
 
 ```graphviz
 digraph {
-    A -> B
-    B -> A
+    size=3
+    ratio=0.3
+    Oath -> Trust1
+    Oath -> Trust2
+    Oath -> Trust3
+    Trust1 -> Trust4
+    Trust1 -> Trust5
+    Trust1 -> Trust6
+    Trust2 -> Trust7
+    Trust2 -> Trust8
+    Trust2 -> Trust9
+    Trust3 -> Trust10
+    Trust3 -> Trust11
+    Trust3 -> Trust12
 }
 ```
+
+<br>
 
 # References
 
