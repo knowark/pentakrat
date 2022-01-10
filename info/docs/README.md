@@ -3,7 +3,7 @@
 ![logo](logo.svg ':size=200x200')
 
 A decentralized platform that materializes the links of trust established in
-represantational systems.
+representational systems.
 
 For **Leaders** the platform provides accurate information about the *level of
 support* their proposals build upon their target audiences and the eventual
