@@ -41,12 +41,12 @@ further and say that our fate is determined by those who have climbed the
 political pyramid with each of us acting like the steps of a ladder. As social
 individuals, we do that because efficient leadership allows us to look for
 opportunities beyond the horizon and collectively benefit from them by
-following unified and coordinated guidelines. By trusting in individuals who
-propose to manage some dimension of our lives for our greatest benefit, we
-concede a stake of our autonomy to focus in other areas in which we think we
-can make a bigger difference. It is a contract like any other in which one
-party commits to provide an orchestration service, in exchange of recognition,
-status and economic compensation.
+following unified and coordinated guidelines. By trusting in those who propose
+to manage some dimension of our lives for our greatest benefit, we concede a
+stake of our autonomy to focus in other areas in which we think we can make a
+bigger difference. It is a contract like any other in which one party commits
+to provide an orchestration service, in exchange of recognition, status and
+economic compensation.
 
 It is intriguing to observe, however, how some of those who have acquired
 access to power through their promises, forget about them just after realizing
@@ -61,13 +61,13 @@ civilization and it is naive to aim at a problem that has multiple forms and
 keeps on evolving, perhaps we have achieved a point in which the technological
 tools we have developed to aid in our informational, logistical and commercial
 activities, can provide the additional utility of designing a sociological
-infrastructure that will establish fair and inalienable interaction mechanisms
-for all. *Pentakrat* is fond of that vision and is an initiative to experiment,
-learn and share the outcomes of those kind of interventions. If for any chance
-it raises the interest in developing more solutions to tackle these kind of
-organizational challenges, it would have fulfilled its mission and declare
-success. Please join us with your participation and feedback. Let's try this
-out and see what happens!
+infrastructure that is able to establish fair and inalienable interaction
+mechanisms for all. *Pentakrat* is fond of that vision and is an initiative to
+experiment, learn and share the outcomes of those kind of interventions. If for
+any chance it raises the interest in developing more solutions to tackle these
+kind of organizational challenges, it would have fulfilled its mission and
+declare success. Please join us with your participation and feedback. Let's try
+this out and see what happens!
 
 
 # Structure
