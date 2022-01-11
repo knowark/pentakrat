@@ -1,5 +1,5 @@
 <div align="center">
-  <img width="200" src=".\logo.svg" alt="logo of BitcoinMythBusters">
+  <img width="200" src=".\logo.svg" alt="logo">
 </div>
 
 ---
@@ -69,3 +69,4 @@ digraph {
 - [Estonia DAO](https://estoniadao.org/)
 - [Mirror](https://mirror.xyz/)
 - [A few limits of traditional organizations and their governance systems](https://medium.com/@LuigiGrx/2-2-daos-a-new-organizational-and-governance-paradigm-93e889df1b39?p=d452fe6ea41f)
+- [Hop Exchange](https://app.hop.exchange/)
