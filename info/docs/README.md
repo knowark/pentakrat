@@ -33,6 +33,40 @@ electoral processes* by providing the resources they need while preventing
 their coercion by selfish agendas. In short, it is a way to *invest with
 democratic purpose*.
 
+# Justification
+
+A great part of our live depends on the decisions that others make on our
+behalf, especially regarding common resources administration. One could go
+further and say that our fate is determined by those who have climbed the
+social pyramid with each of us acting like the steps of a ladder. As social
+individuals, we do that because efficient leadership allows us to look for
+opportunities beyond the horizon and collectively benefit from them by
+following unified and coordinated guidelines. By trusting in individuals who
+propose to manage some dimension of our lives for our greatest benefit, we
+concede a stake of our autonomy to focus in other areas in which we think we
+can make a bigger difference. It is a contract like any other in which one
+party commits to provide an orchestration service, in exchange of recognition,
+status and economic compensation.
+
+It is intriguing to observe, however, how some of those who have acquired
+access to power through their promises, forget about them almost immediately
+after realizing they have already claimed the bounty without having to go on a
+hunt. Moreover, if they manage to grasp an opportunity to tilt the balance in
+their favour, they change the rules of the game by coercing those who are
+beneath them and secure their authority. Such acts are vile and deceptive, but
+they happen all across the world and especially in those places where
+institutions are not strong enough to align the social actors they were
+designed to govern. Despite corruption being something that has existed from
+the outset of civilization and it is naive to aim at a problem that has
+multiple forms and keeps on evolving, perhaps we have achieved a point in which
+the technological tools we have developed to aid in our informational,
+logistical and commercial activities, can provide the additional utility of
+designing a sociological infrastructure that will establish fair and
+inalienable rules of the game for all. *Pentakrat* is fond of that vision and
+is an initiative to experiment, learn and share the outcomes of those kind of
+interventions.
+
+
 # Structure
 
 
