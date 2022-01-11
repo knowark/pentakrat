@@ -35,7 +35,7 @@ democratic purpose*.
 
 # Justification
 
-A great part of our live depends on the decisions that others make on our
+A great part of our lives depends on the decisions that others make on our
 behalf, especially regarding common resources administration. One could go
 further and say that our fate is determined by those who have climbed the
 social pyramid with each of us acting like the steps of a ladder. As social
@@ -49,22 +49,25 @@ party commits to provide an orchestration service, in exchange of recognition,
 status and economic compensation.
 
 It is intriguing to observe, however, how some of those who have acquired
-access to power through their promises, forget about them almost immediately
-after realizing they have already claimed the bounty without having to go on a
-hunt. Moreover, if they manage to grasp an opportunity to tilt the balance in
-their favour, they change the rules of the game by coercing those who are
-beneath them and secure their authority. Such acts are vile and deceptive, but
-they happen all across the world and especially in those places where
-institutions are not strong enough to align the social actors they were
-designed to govern. Despite corruption being something that has existed from
-the outset of civilization and it is naive to aim at a problem that has
-multiple forms and keeps on evolving, perhaps we have achieved a point in which
-the technological tools we have developed to aid in our informational,
-logistical and commercial activities, can provide the additional utility of
-designing a sociological infrastructure that will establish fair and
-inalienable rules of the game for all. *Pentakrat* is fond of that vision and
-is an initiative to experiment, learn and share the outcomes of those kind of
-interventions.
+access to power through their promises, forget about them just after realizing
+that they have already claimed the bounty without having to go hunting.
+Moreover, if they manage to grasp an opportunity to tilt the balance in their
+favour, they change the rules of the game by coercing those who are beneath
+them and securing their authority. Such acts are vile and deceptive, but they
+happen all across the world and especially in those places where institutions
+are not strong enough to align the social actors they were designed to govern.
+Despite corruption being something that has existed since the outset of
+civilization and it is naive to aim at a problem that has multiple forms and
+keeps on evolving, perhaps we have achieved a point in which the technological
+tools we have developed to aid in our informational, logistical and commercial
+activities, can provide the additional utility of designing a sociological
+infrastructure that will establish fair and inalienable interaction mechanisms
+for all. *Pentakrat* is fond of that vision and is an initiative to experiment,
+learn and share the outcomes of those kind of interventions. If for any chance
+it raises the interest in developing more solutions to tackle these kind of
+organizational challenges, it would have fulfilled its mission and declare
+success. Please join us with your participation and feedback. Let's try this
+out and see what happens!
 
 
 # Structure
