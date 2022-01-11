@@ -47,15 +47,12 @@ export class RootComponent extends Component {
     </div>
     <div class="${tag}__content">
       <ark-card title="Pentakrat" subtitle="The fifth power">
-
         <h1>A decentralized platform that materializes the links of
           trust established in representational systems.</h1>
-
         <ark-button background="primary" color="secondary" slot="actions">Trust</ark-button>
         <ark-button background="success" slot="actions">Reward</ark-button>
       </ark-card>
     </div>
-
     `
 
     return super.render()
