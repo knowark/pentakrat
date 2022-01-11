@@ -29,7 +29,7 @@ push:
 
 deploy:
 	sshpass -e rsync -av --delete ./dist/ \
-		${RSYNC_USER}@${RSYNC_HOST}:${RSYNC_DIR}
+		${RSYNC_USER}@${RSYNC_HOST}:${RSYNC_DIR}/app
 
 reset:
 	git reset --hard
