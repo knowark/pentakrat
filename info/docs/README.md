@@ -38,7 +38,7 @@ democratic purpose*.
 A great part of our lives depends on the decisions that others make on our
 behalf, especially regarding common resources administration. One could go
 further and say that our fate is determined by those who have climbed the
-social pyramid with each of us acting like the steps of a ladder. As social
+political pyramid with each of us acting like the steps of a ladder. As social
 individuals, we do that because efficient leadership allows us to look for
 opportunities beyond the horizon and collectively benefit from them by
 following unified and coordinated guidelines. By trusting in individuals who
