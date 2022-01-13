@@ -13,7 +13,7 @@
   <script>
     window.$docsify = {
       name: 'Pentakrat',
-      repo: 'https://github.com/knowark/pentakrat'
+      repo: 'https://github.com/knowark/pentakrat',
     }
   </script>
   <!-- Docsify v4 -->
@@ -22,5 +22,10 @@
   <!--Graphviz-->
   <script src="//unpkg.com/@hpcc-js/wasm/dist/index.min.js"></script>
   <script src="//unpkg.com/docsify-graphviz@latest/dist/docsify-graphviz.js"></script>
+  <script>
+    setTimeout(() => document.querySelectorAll('svg').forEach(
+      element => element.removeAttribute(
+        'width') || element.removeAttribute('height')), 300)
+  </script>
 </body>
 </html>

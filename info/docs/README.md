@@ -33,7 +33,7 @@ electoral processes* by providing the resources they need while preventing
 their coercion by selfish agendas. In short, it is a way to *invest with
 democratic purpose*.
 
-# Justification
+# Motivation
 
 A great part of our lives depends on the decisions that others make on our
 behalf, especially regarding common resources administration. One could go
@@ -69,17 +69,23 @@ kind of organizational challenges, it would have fulfilled its mission and
 declare success. Please join us with your participation and feedback. Let's try
 this out and see what happens!
 
+# Implementation
 
-# Structure
-
+Pentakrat uses *blockchain technology* to permanently and transparently record
+the bonds of trust established between *Leaders* and their *Supporters* in the
+context of fulfilling a determined *Mission*. A *Mission* is any cause that has
+value for the community within a defined period  and that requires the
+coordinated effort of some of its members. Technically, each *Mission* is a
+*Smart Contract* of the chains of *Trust* build up by the relationship
+established when a *Supporter* chooses his *Leader*. This precise encounter is
+*Pentakrat's* essence, as it creates the *Non-Fungible Token (NFT)* that
+supports its ecosystem. For this community, *Trust* is worth more than gold.
 
 ```graphviz
 digraph {
-    size=3
-    ratio=0.3
-    Oath -> Trust1
-    Oath -> Trust2
-    Oath -> Trust3
+    Mission1 -> Trust1
+    Mission1 -> Trust2
+    Mission1 -> Trust3
     Trust1 -> Trust4
     Trust1 -> Trust5
     Trust1 -> Trust6
@@ -89,6 +95,30 @@ digraph {
     Trust3 -> Trust10
     Trust3 -> Trust11
     Trust3 -> Trust12
+}
+```
+
+Each *Mission* begins its existence when its founding *Accounts* set its
+*statement* and *deadline*. They become, the first *Supporters* of the mission.
+But the value of *Pentakrat* resides in fostering *Transparent Leadership* to
+achieve laudable objectives that require the collective acceptance of vast
+members of society. Thus, in order to fulfill their mission, the founders will
+begin to build up chains of *Trust* with other *Supporters* that choose the
+*Leader* they believe has made the best *proposal*. This new line of support
+can likewise build new *bonds* of *Trust* with those who elect them as their
+representatives. In each successful interaction a new *Trust NFT* is *minted*
+and allocated to the person expressing her support. Namely, It is her *Trust*
+the one she is holding.
+
+
+```graphviz
+digraph {
+    rankdir="LR"
+    Leader -> Bond
+    Supporter -> Bond
+    Bond -> Trust
+
+    Bond [shape=box]
 }
 ```
 
