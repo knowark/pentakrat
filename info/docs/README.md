@@ -74,10 +74,10 @@ this out and see what happens!
 Pentakrat uses *blockchain technology* to permanently and transparently record
 the bonds of trust established between *Leaders* and their *Supporters* in the
 context of fulfilling a determined *Mission*. A *Mission* is any cause that has
-value for the community within a defined period  and that requires the
+value for the community within a defined period and that requires the
 coordinated effort of some of its members. Technically, each *Mission* is a
-*Smart Contract* of the chains of *Trust* build up by the relationship
-established when a *Supporter* chooses his *Leader*. This precise encounter is
+*Smart Contract* of the chains of *Trust* built up by the relationships that
+are formed when a *Supporter* chooses his *Leader*. This precise encounter is
 *Pentakrat's* essence, as it creates the *Non-Fungible Token (NFT)* that
 supports its ecosystem. For this community, *Trust* is worth more than gold.
 
