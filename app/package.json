@@ -3,10 +3,14 @@
   "version": "0.1.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "NODE_OPTIONS='--experimental-vm-modules --no-warnings' npx jest --coverage",
     "dev": "webpack serve --https --mode development --env development",
     "build": "webpack --mode production --env production"
+  },
+  "jest": {
+    "transform": {}
   },
   "keywords": [],
   "author": "",
@@ -16,6 +20,7 @@
     "copy-webpack-plugin": "^10.2.0",
     "css-loader": "^6.5.1",
     "html-webpack-plugin": "^5.5.0",
+    "jest": "^27.4.7",
     "mini-css-extract-plugin": "^2.4.6",
     "sass-loader": "^12.4.0",
     "webpack": "^5.65.0",
@@ -23,8 +28,8 @@
     "webpack-dev-server": "^4.7.2"
   },
   "dependencies": {
-    "@knowark/injectarkjs": "^0.4.3",
-    "@knowark/routarkjs": "^0.5.1",
+    "@knowark/injectarkjs": "^0.5.0",
+    "@knowark/routarkjs": "^0.6.0",
     "componark": "github:knowark/componark#v0.43.0",
     "sass": "^1.47.0"
   }
