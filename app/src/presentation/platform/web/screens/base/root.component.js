@@ -1,11 +1,11 @@
-import 'components/button'
-import 'components/card'
-import 'components/icon'
-import 'components/navbar'
-import 'components/input'
-import 'components/modal'
-import 'components/list'
-import { Alert } from 'components/alert'
+//import 'components/button'
+//import 'components/card'
+//import 'components/icon'
+//import 'components/navbar'
+//import 'components/input'
+//import 'components/modal'
+//import 'components/list'
+//import { Alert } from 'components/alert'
 import { Component } from 'base/component'
 // @ts-ignore
 // eslint-disable-next-line no-undef
@@ -19,7 +19,7 @@ export class RootComponent extends Component {
     this.global = context.global || window
     this.router = this.resolve('Router')
     this.sessionManager = this.resolve('SessionManager')
-    this.addEventListener('error', this.onError.bind(this))
+    //this.addEventListener('error', this.onError.bind(this))
 
     return super.init()
   }

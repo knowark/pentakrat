@@ -6,4 +6,3 @@ export class BaseFactory extends Factory {
     return new Routark()
   }
 }
-
