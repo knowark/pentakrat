@@ -12,8 +12,7 @@ export class RootComponent extends Component {
   init (context = {}) {
     this.global = context.global || window
     this.router = this.resolve('Router')
-    //this.sessionManager = this.resolve('SessionManager')
-    //this.addEventListener('error', this.onError.bind(this))
+    this.addEventListener('error', this.onError.bind(this))
 
     return super.init()
   }
@@ -60,26 +59,19 @@ export class RootComponent extends Component {
     return super.render()
   }
 
+  /** @param {CustomEvent} event */
   onTab(event) {
     event.stopPropagation()
-    console.log('Tab!')
-  }
-
-  get _locations () {
-    return [
-    ]
+    event.detail.called = true
   }
 
   /** @param {CustomEvent} event */
   onError (event) {
     event.stopPropagation()
-    Alert.launch(
-      {
-        title: 'Error',
-        text: event.detail.message
-      },
-      this
-    )
+    Alert.launch({
+      title: 'Error',
+      text: event.detail.message
+    }, this)
   }
 }
 
