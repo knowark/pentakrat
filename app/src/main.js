@@ -1,13 +1,12 @@
 import { Injectark } from '@knowark/injectarkjs'
-import { FACTORIES } from './integration/factories'
+import { FACTORIES } from './integration/factories/index.js'
 import {
   setMainRoutes
-} from './presentation/platform/web/screens'
+} from './presentation/platform/web/screens/index.js'
 
 /* istanbul ignore next */
 export async function main (config) {
   const factory = FACTORIES[config.factory](config)
-  console.log('factory>>>', factory)
   const injector = new Injectark({ factory })
 
   const mainComponent = document.querySelector('main')

@@ -1,17 +1,11 @@
-//import 'components/button'
-//import 'components/card'
-//import 'components/icon'
-//import 'components/navbar'
-//import 'components/input'
-//import 'components/modal'
-//import 'components/list'
-//import { Alert } from 'components/alert'
+import 'components/button'
+import 'components/card'
+import 'components/icon'
+import 'components/tabs'
+import { Alert } from 'components/alert'
 import { Component } from 'base/component'
-// @ts-ignore
-// eslint-disable-next-line no-undef
 import logo from 'theme/assets/logo.svg'
 export const version = process.env.VERSION
-
 
 const tag = 'app-root'
 export class RootComponent extends Component {
@@ -34,28 +28,45 @@ export class RootComponent extends Component {
 
   render () {
     this.content = /* html */ `
-    
-    <div class="${tag}__nav">
-      <ark-navbar justify='between' background='primary'>
-        <ark-nav brand>
-          <div data-page-name class="page-name">
-            <img class="${tag}__navbar_logo" src="${logo}" alt="Pentakrat">
-          </div>
-        </ark-nav>
-      </ark-navbar>
-      <div data-root></div>
-    </div>
-    <div class="${tag}__content">
+    <header class="${tag}__nav">
+      <nav class="${tag}__navbar" background='primary'>
+        <div class="${tag}__navbar_brand">
+          <img class="${tag}__navbar_logo" src="${logo}" alt="Pentakrat">
+        </div>
+        <span>Pentakrat</span>
+        <div class="${tag}__navbar_connect">
+          <ark-button background="success">Connect</ark-button>
+        </div>
+      </nav>
+    </header>
+
+    <article class="${tag}__content">
       <ark-card title="Pentakrat" subtitle="The fifth power">
         <h1>A decentralized platform that materializes the links of
           trust established in representational systems.</h1>
         <ark-button background="primary" color="secondary" slot="actions">Trust</ark-button>
         <ark-button background="success" slot="actions">Reward</ark-button>
       </ark-card>
-    </div>
+    </article>
+
+    <footer>
+      <ark-tabs background="info" listen on-tabs:selected="onTab">
+        <ark-tabs-item title="Support" tab="example-1">
+        </ark-tabs-item>
+        <ark-tabs-item title="Lead" tab="example-2">
+        </ark-tabs-item>
+        <ark-tabs-item title="Audit" tab="example-3">
+        </ark-tabs-item>
+      </ark-tabs>
+    </footer>
     `
 
     return super.render()
+  }
+
+  onTab(event) {
+    event.stopPropagation()
+    console.log('Tab!')
   }
 
   get _locations () {
@@ -79,16 +90,32 @@ export class RootComponent extends Component {
 
 const styles = /* css */ `
   .${tag} {
-    display: block;
-    height: 100%;
+    display: grid;
+    background-image: radial-gradient(gray 10%, dimgray 20%);
+    grid-template-rows: auto 4fr auto;
+    height: 100vh;
+    width: 100vw;
+  }
+  .${tag}__navbar {
+    display: grid;
+    color: white;
+    align-items: center;
+    justify-content: space-between;
+    grid-template-columns: auto auto auto;
+    background-color: var(--primary);
   }
   .${tag}__navbar_logo {
     width: 50px;
     padding: 0.5rem;
   }
+  .${tag}__navbar_connect {
+    padding: 0.5rem;
+  }
   .${tag}__content {
     padding: 3rem;
   }
+  .${tag} footer {
+    padding: 1rem;
+  }
 `
 Component.define(tag, RootComponent, styles)
-

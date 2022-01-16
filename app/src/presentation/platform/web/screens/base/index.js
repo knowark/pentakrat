@@ -1,1 +1,1 @@
-import './root.component'
+import './root.component.js'
