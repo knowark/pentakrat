@@ -12,7 +12,7 @@ export class RootComponent extends Component {
   init (context = {}) {
     this.global = context.global || window
     this.router = this.resolve('Router')
-    this.sessionManager = this.resolve('SessionManager')
+    //this.sessionManager = this.resolve('SessionManager')
     //this.addEventListener('error', this.onError.bind(this))
 
     return super.init()
@@ -20,10 +20,6 @@ export class RootComponent extends Component {
 
   reflectedProperties () {
     return ['prefix']
-  }
-
-  get user () {
-    return this.sessionManager.getUser()
   }
 
   render () {
@@ -85,7 +81,6 @@ export class RootComponent extends Component {
       this
     )
   }
-
 }
 
 const styles = /* css */ `
@@ -93,8 +88,8 @@ const styles = /* css */ `
     display: grid;
     background-image: radial-gradient(gray 10%, dimgray 20%);
     grid-template-rows: auto 4fr auto;
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
   }
   .${tag}__navbar {
     display: grid;

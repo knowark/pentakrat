@@ -1,6 +1,6 @@
-export function setMainRoutes (mainComponent, injector, prefix='/') {
+export function setMainRoutes (mainComponent, injector) {
   const router = injector.resolve('Router')
-  router.addRoutes(prefix, [
+  router.addRoutes('/', [
     {
       path: '/',
       action: async () => {
@@ -16,4 +16,3 @@ function setMainComponent (mainComponent, screenComponent) {
   while (mainComponent.firstChild) mainComponent.firstChild.remove()
   mainComponent.appendChild(screenComponent)
 }
-
