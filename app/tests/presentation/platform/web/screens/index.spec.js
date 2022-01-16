@@ -6,6 +6,7 @@ describe('Screens', () => {
   let main = null                                                 
   beforeEach(() => {                                              
     main = document.createElement('main')                         
+    main.appendChild(document.createElement('div'))
     document.body.appendChild(main)                               
   })                                                              
                                                                   
