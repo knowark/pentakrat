@@ -27,7 +27,7 @@ standard:
 push:
 	git push && git push --tags
 
-deploy:
+deploy: build
 	sshpass -e rsync -av --delete ./dist/ \
 		${RSYNC_USER}@${RSYNC_HOST}:${RSYNC_DIR}/app
 

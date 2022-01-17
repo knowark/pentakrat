@@ -23,8 +23,12 @@ ${tag} .ark-card {
   display: grid;
   justify-items: center;
 }
+${tag} .ark-card__body {
+  display: grid;
+  justify-items: center;
+}
 .${tag}_qrcode {
-  width: 100%;
+  width: min(50vh, 10rem);
 }
 
 `
