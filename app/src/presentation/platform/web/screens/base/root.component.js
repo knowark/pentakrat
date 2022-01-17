@@ -45,7 +45,7 @@ export class RootComponent extends Component {
     </article>
 
     <footer>
-      <ark-tabs background="info" listen on-tabs:selected="onTab">
+      <ark-tabs background="success" listen on-tabs:selected="onTab">
         <ark-tabs-item title="Support" tab="example-1">
         </ark-tabs-item>
         <ark-tabs-item title="Lead" tab="example-2">
@@ -78,7 +78,7 @@ export class RootComponent extends Component {
 const styles = /* css */ `
   .${tag} {
     display: grid;
-    background-image: radial-gradient(gray 10%, dimgray 20%);
+    background-color: dimgray;
     grid-template-rows: auto 4fr auto;
     height: 100%;
     width: 100%;
@@ -99,7 +99,7 @@ const styles = /* css */ `
     padding: 0.5rem;
   }
   .${tag}__content {
-    padding: 3rem;
+    padding: 5vh calc(25vw - 3rem);
   }
   .${tag} footer {
     padding: 1rem;
