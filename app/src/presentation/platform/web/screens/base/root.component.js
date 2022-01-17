@@ -32,13 +32,13 @@ export class RootComponent extends Component {
         </div>
         <span>Pentakrat</span>
         <div class="${tag}__navbar_connect">
-          <ark-button background="success">Connect</ark-button>
+          <ark-button background="success"
+            listen on-click="onConnect">Connect</ark-button>
         </div>
       </nav>
     </header>
 
     <article class="${tag}__content" data-content>
-      <support-main></support-main>
     </article>
 
     <footer>
@@ -54,6 +54,12 @@ export class RootComponent extends Component {
     `
 
     return super.render()
+  }
+
+  /** @param {CustomEvent} event */
+  onConnect (event) {
+    event.stopPropagation()
+    console.log('Connecting')
   }
 
   /** @param {CustomEvent} event */

@@ -12,7 +12,8 @@ export class AnalyzeComponent extends Component {
         color="secondary" slot="actions">Trust</ark-button>
       <ark-button background="success" slot="actions">Reward</ark-button>
     </ark-card>
-  `
+    `
+    return super.render()
   }
 }
 

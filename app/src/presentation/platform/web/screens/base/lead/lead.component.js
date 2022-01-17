@@ -15,15 +15,16 @@ export class LeadComponent extends Component {
       element: document.getElementById('qrcode'),
       value: JSON.stringify({mission: 'The best mission'}),
     })
+    return super.render()
   }
 }
 
 const styles = `
-${tag} .ark-card {
+.${tag} .ark-card {
   display: grid;
   justify-items: center;
 }
-${tag} .ark-card__body {
+.${tag} .ark-card__body {
   display: grid;
   justify-items: center;
 }
