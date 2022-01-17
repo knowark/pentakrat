@@ -1,0 +1,1 @@
+import './lead.component.js'

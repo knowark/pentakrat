@@ -5,7 +5,9 @@ import 'components/tabs'
 import { Alert } from 'components/alert'
 import { Component } from 'base/component'
 import logo from 'theme/assets/logo.svg'
-export const version = process.env.VERSION
+import './analyze/index.js'
+import './lead/index.js'
+import './support/index.js'
 
 const tag = 'app-root'
 export class RootComponent extends Component {
@@ -35,22 +37,17 @@ export class RootComponent extends Component {
       </nav>
     </header>
 
-    <article class="${tag}__content">
-      <ark-card title="Pentakrat" subtitle="The fifth power">
-        <h1>A decentralized platform that materializes the links of
-          trust established in representational systems.</h1>
-        <ark-button background="primary" color="secondary" slot="actions">Trust</ark-button>
-        <ark-button background="success" slot="actions">Reward</ark-button>
-      </ark-card>
+    <article class="${tag}__content" data-content>
+      <support-main></support-main>
     </article>
 
     <footer>
       <ark-tabs background="success" listen on-tabs:selected="onTab">
-        <ark-tabs-item title="Support" tab="example-1">
+        <ark-tabs-item title="Support" tab="support">
         </ark-tabs-item>
-        <ark-tabs-item title="Lead" tab="example-2">
+        <ark-tabs-item title="Lead" tab="lead">
         </ark-tabs-item>
-        <ark-tabs-item title="Audit" tab="example-3">
+        <ark-tabs-item title="Analyze" tab="analyze">
         </ark-tabs-item>
       </ark-tabs>
     </footer>
@@ -63,6 +60,8 @@ export class RootComponent extends Component {
   onTab(event) {
     event.stopPropagation()
     event.detail.called = true
+    const tab = event.detail.data.tab
+    this.setContentComponent(`${tab}-main`)
   }
 
   /** @param {CustomEvent} event */
@@ -72,6 +71,15 @@ export class RootComponent extends Component {
       title: 'Error',
       text: event.detail.message
     }, this)
+  }
+
+  /** @param {string} tag */
+  setContentComponent (tag) {
+    const component = document.createElement(tag)
+    const contentElement = super.select('[data-content]')
+
+    while (contentElement.firstChild) contentElement.firstChild.remove()
+    contentElement.appendChild(component)
   }
 }
 
