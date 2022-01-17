@@ -1,20 +1,31 @@
 import 'components/button'
 import 'components/card'
 import { Component } from 'base/component'
+import QRious from 'qrious/dist/qrious.js'
 
 const tag = 'lead-main'
 export class LeadComponent extends Component {
   render () {
     this.content = /* html */ `
-    <ark-card title="Pentakrat" subtitle="The fifth power">
-      <h1>LEAD</h1>
-      <ark-button background="primary"
-        color="secondary" slot="actions">Trust</ark-button>
-      <ark-button background="success" slot="actions">Reward</ark-button>
+    <ark-card class="${tag}_content" title="Lead">
+      <canvas class="${tag}_qrcode" id="qrcode"></canvas>
     </ark-card>
-  `
+    `
+    new QRious({
+      element: document.getElementById('qrcode'),
+      value: JSON.stringify({mission: 'The best mission'}),
+    })
   }
 }
 
-const styles = ``
+const styles = `
+${tag} .ark-card {
+  display: grid;
+  justify-items: center;
+}
+.${tag}_qrcode {
+  width: 100%;
+}
+
+`
 Component.define(tag, LeadComponent, styles)
