@@ -61,7 +61,7 @@ export class RootComponent extends Component {
     event.stopPropagation()
     event.detail.called = true
     const tab = event.detail.data.tab
-    this.setContentComponent(`${tab}-main`)
+    this._setContentComponent(`${tab}-main`)
   }
 
   /** @param {CustomEvent} event */
@@ -74,7 +74,7 @@ export class RootComponent extends Component {
   }
 
   /** @param {string} tag */
-  setContentComponent (tag) {
+  _setContentComponent (tag) {
     const component = document.createElement(tag)
     const contentElement = super.select('[data-content]')
 

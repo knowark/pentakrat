@@ -35,12 +35,15 @@ describe('RootComponent', function () {
   })                                                         
 
   it('handles on tab events', () => {
-    const event = new CustomEvent('tabs:selected', {detail: {called: false}})
+    const event = new CustomEvent(
+      'tabs:selected', {detail: {data: {tab: 'lead'}}})
     const tabs = component.select('ark-tabs')
 
     tabs.dispatchEvent(event)
 
-    expect(event.detail.called).toBeTruthy()
+    const lead = component.select('lead-main')
+
+    expect(lead).toBeTruthy()
   })
 
   it('catches and notifies error events', async () => {
