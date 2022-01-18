@@ -25,4 +25,19 @@ describe('SupportComponent', function () {
     expect(component).toBe(component.init())                 
     expect(component.tagName).toEqual('SUPPORT-MAIN')
   })                                                         
+
+  it('opens up a scan modal on trust clicked', () => {
+    const button = component.select('ark-card ark-button')
+    const originalSelect = component.select.bind(component)
+    // Mock camera component
+    component.select = (selector) => {
+      if (selector === 'ark-camera') return { start: () => {} }
+      return originalSelect(selector)
+    }
+
+    button.click()
+
+    const modal = component.select('ark-modal')
+    expect(modal.hasAttribute('show')).toBeTruthy()
+  })
 })

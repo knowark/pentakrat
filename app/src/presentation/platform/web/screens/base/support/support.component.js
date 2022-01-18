@@ -25,7 +25,6 @@ export class SupportComponent extends Component {
 
   onTrust(event) {
     event.stopPropagation()
-    console.log('SCAN')
     this.select('ark-modal').open()
     this.select('ark-camera').start()
   }
