@@ -15,6 +15,7 @@ export class RootComponent extends Component {
     this.global = context.global || window
     this.router = this.resolve('Router')
     this.addEventListener('error', this.onError.bind(this))
+    this.blockchainManager = this.resolve('BlockchainManager')
 
     return super.init()
   }
@@ -32,7 +33,7 @@ export class RootComponent extends Component {
         </div>
         <span>Pentakrat</span>
         <div class="${tag}__navbar_connect">
-          <ark-button background="success"
+          <ark-button background="success" data-connect
             listen on-click="onConnect">Connect</ark-button>
         </div>
       </nav>
@@ -57,9 +58,10 @@ export class RootComponent extends Component {
   }
 
   /** @param {CustomEvent} event */
-  onConnect (event) {
+  async onConnect (event) {
     event.stopPropagation()
-    console.log('Connecting')
+    console.log('Connecting to the blockchain...')
+    await this.blockchainManager.connect({})
   }
 
   /** @param {CustomEvent} event */

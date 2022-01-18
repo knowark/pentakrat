@@ -34,6 +34,13 @@ describe('RootComponent', function () {
     expect(component).toBe(component.init())                 
   })                                                         
 
+  xit('handles on connect events', () => {
+    const connectButton = component.select('[data-connect]')
+
+    connectButton.click()
+
+  })
+
   it('handles on tab events', () => {
     const event = new CustomEvent(
       'tabs:selected', {detail: {data: {tab: 'lead'}}})
