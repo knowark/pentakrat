@@ -34,10 +34,13 @@ describe('RootComponent', function () {
     expect(component).toBe(component.init())                 
   })                                                         
 
-  xit('handles on connect events', () => {
+  it('handles on connect events', async () => {
     const connectButton = component.select('[data-connect]')
 
     connectButton.click()
+    await new Promise((resolve) => setTimeout(resolve, 0))
+
+    expect(component.networkManager.networkProvider)
 
   })
 

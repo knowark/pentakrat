@@ -15,7 +15,7 @@ export class RootComponent extends Component {
     this.global = context.global || window
     this.router = this.resolve('Router')
     this.addEventListener('error', this.onError.bind(this))
-    this.blockchainManager = this.resolve('BlockchainManager')
+    this.networkManager = this.resolve('NetworkManager')
 
     return super.init()
   }
@@ -60,12 +60,11 @@ export class RootComponent extends Component {
   /** @param {CustomEvent} event */
   async onConnect (event) {
     event.stopPropagation()
-    console.log('Connecting to the blockchain...')
-    await this.blockchainManager.connect({})
+    await this.networkManager.connect({})
   }
 
   /** @param {CustomEvent} event */
-  onTab(event) {
+  onTab (event) {
     event.stopPropagation()
     event.detail.called = true
     const tab = event.detail.data.tab
