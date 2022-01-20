@@ -7,6 +7,10 @@ export class NetworkProvider {
   async trust(_trustEntry) {
     throw new Error('Not implemented')
   }
+
+  async distrust() {
+    throw new Error('Not implemented')
+  }
 }
 
 export class MemoryNetworkProvider extends NetworkProvider {

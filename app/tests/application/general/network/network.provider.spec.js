@@ -11,7 +11,8 @@ describe('NetworkProvider', function () {
   it('defines a general interface', async () => {
     const methods = [
       {name: 'connect', arguments: {}}, 
-      {name: 'trust', arguments: {}}
+      {name: 'trust', arguments: {}},
+      {name: 'distrust', arguments: {}}
     ]
 
     for (const method of methods) {
