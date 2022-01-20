@@ -1,9 +1,9 @@
 import { MemoryNetworkProvider } from 'application/general/network/index.js'
 import { NetworkManager } from 'application/operators/managers/index.js'
 
-describe('NetworkManager', function () {                      
-  let manager = null                                       
-  beforeEach(() => {                                         
+describe('NetworkManager', function () {
+  let manager = null
+  beforeEach(() => {
     manager = new NetworkManager({ 
       networkProvider: new MemoryNetworkProvider() 
     })
