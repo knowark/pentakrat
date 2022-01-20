@@ -10,10 +10,10 @@ export async function main (config) {
   const injector = new Injectark({ factory })
 
   const mainComponent = document.querySelector('main')
-  //mainComponent.addEventListener('resolve', (event) => {
-    //const resource = event.detail.resource
-    //event.detail[resource] = injector.resolve(resource)
-  //})
+  mainComponent.addEventListener('resolve', (event) => {
+    const resource = event.detail.resource
+    event.detail[resource] = injector.resolve(resource)
+  })
 
   setMainRoutes(mainComponent, injector)
 }

@@ -27,7 +27,7 @@ module.exports = (env, argv) => {
       new webpack.EnvironmentPlugin({
         PRODUCTION: !devMode,
         ARK_DESIGN: 'ark',
-        FACTORY: JSON.stringify('base'),
+        FACTORY: JSON.stringify('blockchain'),
         VERSION: JSON.stringify(require('./package.json').version),
         API_URL: JSON.stringify(
           devMode ? 'http://api.tempos.local' : 'https://api.tempos.site'

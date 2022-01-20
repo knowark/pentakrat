@@ -11,7 +11,7 @@ export class BaseFactory extends Factory {
     this.networkManager.dependencies = ['NetworkProvider']
   }
 
-  /** @return {NetworkManager} */
+  /** @return {NetworkProvider} */
   networkProvider() {
     return new MemoryNetworkProvider()
   }

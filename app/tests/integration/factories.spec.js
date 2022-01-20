@@ -3,7 +3,14 @@ import { FACTORIES } from '../../src/integration/factories'
                                                                       
 const FACTORY_TESTS = {                                               
   base: [                                                             
-    ['Router', 'Routark']                                             
+    ['Router', 'Routark'], 
+    ['NetworkProvider', 'MemoryNetworkProvider'],
+    ['NetworkManager', 'NetworkManager']                                             
+  ],                                                                  
+  check: [                                                             
+  ],                                                                  
+  blockchain: [                                                             
+    ['NetworkProvider', 'BlockchainNetworkProvider']                                             
   ],                                                                  
 }                                                                     
 

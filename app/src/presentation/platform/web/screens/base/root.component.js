@@ -28,9 +28,7 @@ export class RootComponent extends Component {
     this.content = /* html */ `
     <header class="${tag}__nav">
       <nav class="${tag}__navbar" background='primary'>
-        <div class="${tag}__navbar_brand">
-          <img class="${tag}__navbar_logo" src="${logo}" alt="Pentakrat">
-        </div>
+        <img class="${tag}__navbar_logo" src="${logo}" alt="Pentakrat">
         <span>Pentakrat</span>
         <div class="${tag}__navbar_connect">
           <ark-button background="success" data-connect
@@ -100,15 +98,16 @@ const styles = /* css */ `
   }
   .${tag}__navbar {
     display: grid;
+    height: 3rem;
     color: white;
     align-items: center;
+    justify-items: center;
     justify-content: space-between;
     grid-template-columns: auto auto auto;
     background-color: var(--primary);
   }
   .${tag}__navbar_logo {
-    width: 50px;
-    padding: 0.5rem;
+    width: 3rem;
   }
   .${tag}__navbar_connect {
     padding: 0.5rem;
