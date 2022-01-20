@@ -22,7 +22,6 @@ describe('NetworkManager', function () {
   it('establishes a new trust bond between', async () => {
     const entry = {
       data: {
-        supporter: "SUPPORTER_ADDRESS",
         leader: "LEADER_ADDRESS",
         proposal: "PROPOSAL_URI"
       }

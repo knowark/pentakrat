@@ -44,7 +44,6 @@ describe('MemoryNetworkProvider', function () {
 
   it('establishes trust between supporters and leaders', async () => {
     const trust = {
-      supporter: 'SUPPORTER_ADDRESS',
       leader: 'LEADER_ADDRESS',
       proposal: 'PROPOSAL_URI'
     }
