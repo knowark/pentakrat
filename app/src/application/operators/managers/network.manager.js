@@ -9,4 +9,8 @@ export class NetworkManager {
   async connect(_entry) {
     await this.networkProvider.connect()
   }
+
+  async trust(entry) {
+    await this.networkProvider.trust(entry.data)
+  }
 }

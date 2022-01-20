@@ -8,11 +8,18 @@ describe('NetworkProvider', function () {
     provider = new NetworkProvider({})
   })
 
-  it('connect', async () => {
-    try {
-      await provider.connect()
-    } catch (error) {
-      expect(error.toString()).toEqual('Error: Not implemented')
+  it('defines a general interface', async () => {
+    const methods = [
+      {name: 'connect', arguments: {}}, 
+      {name: 'trust', arguments: {}}
+    ]
+
+    for (const method of methods) {
+      try {
+        await provider[method.name](method.arguments)
+      } catch (error) {
+        expect(error.toString()).toEqual('Error: Not implemented')
+      }
     }
   })
 })
@@ -32,5 +39,16 @@ describe('MemoryNetworkProvider', function () {
     await provider.connect()
 
     expect(provider._connected).toBeTruthy()
+  })
+
+  it('establishes trust between supporters and leaders', async () => {
+    const trust = {
+      supporter: 'SUPPORTER_ADDRESS',
+      leader: 'LEADER_ADDRESS',
+      proposal: 'PROPOSAL_URI'
+    }
+    await provider.trust(trust)
+
+    expect(provider._trust).toEqual(trust)
   })
 })
