@@ -5,13 +5,14 @@ const FACTORY_TESTS = {
   base: [                                                             
     ['Router', 'Routark'], 
     ['NetworkProvider', 'MemoryNetworkProvider'],
-    ['NetworkManager', 'NetworkManager']                                             
-  ],                                                                  
-  check: [                                                             
-  ],                                                                  
-  blockchain: [                                                             
-    ['NetworkProvider', 'BlockchainNetworkProvider']                                             
-  ],                                                                  
+    ['NetworkManager', 'NetworkManager'],
+    ['NetworkInformer', 'NetworkInformer'],
+  ],
+  check: [
+  ],
+  blockchain: [
+    ['NetworkProvider', 'BlockchainNetworkProvider'],
+  ],
 }                                                                     
 
 describe('Factories', function () {
