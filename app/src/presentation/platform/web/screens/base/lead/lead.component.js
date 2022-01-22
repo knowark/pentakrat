@@ -1,21 +1,32 @@
 import 'components/button'
+import 'components/input'
 import 'components/card'
 import { Component } from 'base/component'
-import QRious from 'qrious/dist/qrious.js'
 
 const tag = 'lead-main'
 export class LeadComponent extends Component {
+  init (context) {
+    this.address = 'NOT CONNECTED'
+    this.networkInformer = this.resolve('NetworkInformer')
+
+    console.log('informer>>>>', this.networkInformer)
+    return super.init(context)
+  }
+
   render () {
     this.content = /* html */ `
     <ark-card class="${tag}_content" title="Lead">
-      <canvas class="${tag}_qrcode" id="qrcode"></canvas>
+      <ark-input></ark-input>
+      <p class=${tag}_address>${this.address}</p>
+      <ark-button background="success">GENERATE</ark-button>
     </ark-card>
     `
-    new QRious({
-      element: document.getElementById('qrcode'),
-      value: JSON.stringify({mission: 'The best mission'}),
-    })
     return super.render()
+  }
+
+  async load () {
+    this.address = (await this.networkInformer.getAddress({})).data
+    this.render()
   }
 }
 

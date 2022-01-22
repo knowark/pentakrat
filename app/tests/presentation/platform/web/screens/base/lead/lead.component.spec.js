@@ -1,3 +1,5 @@
+import { Injectark } from '@knowark/injectarkjs'
+import { FACTORIES } from 'factories'
 import 'screens/base/lead/index.js'
 /** @typedef { import("base/component").Component } Component **/
 
@@ -8,6 +10,11 @@ describe('LeadComponent', function () {
     container = document.createElement('div')
     component = /** @type {Component} */ (
       document.createElement('lead-main'))
+    const factory = FACTORIES.check({})
+    const injector = new Injectark({ factory })
+    component.resolve = (resource) => {
+      return injector.resolve(resource)
+    }                                  
 
     document.body.append(container)                          
     container.append(component)                              

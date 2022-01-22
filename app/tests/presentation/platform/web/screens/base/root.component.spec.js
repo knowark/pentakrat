@@ -14,9 +14,10 @@ describe('RootComponent', function () {
     container = document.createElement('div')                
     component = /** @type {Component} */ (                   
       document.createElement('app-root'))                    
-    component.resolve = (resource) => {                      
-      return injector.resolve(resource)                      
-    }                                                        
+    component.addEventListener('resolve', (event) => {
+      const resource = event.detail.resource
+      event.detail[resource] = injector.resolve(resource)
+    })
                                                              
     document.body.append(container)                          
     container.append(component)                              
@@ -65,5 +66,4 @@ describe('RootComponent', function () {
     const alert = component.select('ark-alert')
     expect(alert).toBeTruthy()
   })
-                                                             
 })
