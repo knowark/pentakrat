@@ -10,8 +10,7 @@ describe('LeadComponent', function () {
     container = document.createElement('div')
     component = /** @type {Component} */ (
       document.createElement('lead-main'))
-    const factory = FACTORIES.check({})
-    const injector = new Injectark({ factory })
+    const injector = new Injectark({ factory: FACTORIES.check({}) })
     component.resolve = (resource) => {
       return injector.resolve(resource)
     }                                  

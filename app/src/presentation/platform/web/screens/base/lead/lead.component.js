@@ -8,8 +8,6 @@ export class LeadComponent extends Component {
   init (context) {
     this.address = 'NOT CONNECTED'
     this.networkInformer = this.resolve('NetworkInformer')
-
-    console.log('informer>>>>', this.networkInformer)
     return super.init(context)
   }
 
@@ -19,6 +17,7 @@ export class LeadComponent extends Component {
       <ark-input></ark-input>
       <p class=${tag}_address>${this.address}</p>
       <ark-button background="success">GENERATE</ark-button>
+      <p class="${tag}_code">CODE</p>
     </ark-card>
     `
     return super.render()

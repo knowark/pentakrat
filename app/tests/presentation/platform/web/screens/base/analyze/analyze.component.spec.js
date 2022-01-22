@@ -10,11 +10,10 @@ describe('AnalyzeComponent', function () {
     container = document.createElement('div')
     component = /** @type {Component} */ (
       document.createElement('analyze-main'))
-    const factory = FACTORIES.check({})
-    const injector = new Injectark({ factory })
+    const injector = new Injectark({ factory: FACTORIES.check({}) })
     component.resolve = (resource) => {
       return injector.resolve(resource)
-    }                                                        
+    }                                  
 
     document.body.append(container)                          
     container.append(component)                              
