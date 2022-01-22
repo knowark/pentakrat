@@ -24,4 +24,10 @@ describe('NetworkInformer', function () {
 
     expect(result.data).toBe(1)
   })
+
+  it('gets the address of the connected user', async () => {
+    const result = await informer.getAddress({})
+
+    expect(result.data.length).toBeTruthy()
+  })
 })

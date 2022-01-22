@@ -11,6 +11,10 @@ export class NetworkProvider {
   async distrust() {
     throw new Error('Not implemented')
   }
+  
+  async address() {
+    throw new Error('Not implemented')
+  }
 }
 
 export class MemoryNetworkProvider extends NetworkProvider {
@@ -21,5 +25,10 @@ export class MemoryNetworkProvider extends NetworkProvider {
   /** @param {{ supporter: string, leader: string, proposal: string  }} */
   async trust(trustEntry) {
     this._trust = trustEntry
+  }
+
+  /** @return string */
+  async address() {
+    return 'PUBLIC_ADDRESS'
   }
 }

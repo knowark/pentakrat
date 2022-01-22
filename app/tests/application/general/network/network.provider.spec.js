@@ -12,7 +12,8 @@ describe('NetworkProvider', function () {
     const methods = [
       {name: 'connect', arguments: {}}, 
       {name: 'trust', arguments: {}},
-      {name: 'distrust', arguments: {}}
+      {name: 'distrust', arguments: {}},
+      {name: 'address', arguments: {}}
     ]
 
     for (const method of methods) {
@@ -50,5 +51,11 @@ describe('MemoryNetworkProvider', function () {
     await provider.trust(trust)
 
     expect(provider._trust).toEqual(trust)
+  })
+
+  it('gets the address of the connected user', async () => {
+    const address = await provider.address()
+
+    expect(address.length).toBeTruthy()
   })
 })

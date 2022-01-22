@@ -13,4 +13,8 @@ export class NetworkInformer {
   async getJuras(_entry) {
     return { data: 1 }
   }
+
+  async getAddress(_entry) {
+    return { data: await this.networkProvider.address() }
+  }
 }
