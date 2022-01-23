@@ -6,7 +6,10 @@ import { Component } from 'base/component'
 const tag = 'lead-main'
 export class LeadComponent extends Component {
   init (context) {
-    this.address = 'NOT CONNECTED'
+    this.state = {
+      address: 'NOT CONNECTED',
+      proposal: ''
+    }
     this.networkInformer = this.resolve('NetworkInformer')
     return super.init(context)
   }
@@ -14,18 +17,32 @@ export class LeadComponent extends Component {
   render () {
     this.content = /* html */ `
     <ark-card class="${tag}_content" title="Lead">
-      <ark-input></ark-input>
-      <p class=${tag}_address>${this.address}</p>
-      <ark-button background="success">GENERATE</ark-button>
-      <p class="${tag}_code">CODE</p>
+      <ark-input listen on-alter="{{ state.proposal }}"></ark-input>
+      <p class=${tag}_address>${this.state.address}</p>
+      <ark-button data-generate background="success"
+        listen on-click="onGenerate">
+        GENERATE
+      </ark-button>
+      <textarea data-code class="${tag}_code" readonly rows="7" cols="40">
+        LEADER-CODE
+      </textarea>
     </ark-card>
     `
     return super.render()
   }
 
   async load () {
-    this.address = (await this.networkInformer.getAddress({})).data
+    this.state.address = (await this.networkInformer.getAddress({})).data
     this.render()
+  }
+
+  onGenerate(event) {
+    event.stopPropagation()
+    const code = btoa(JSON.stringify({
+      address: this.state.address,
+      proposal: this.state.proposal
+    }))
+    this.select('[data-code]').value = code
   }
 }
 

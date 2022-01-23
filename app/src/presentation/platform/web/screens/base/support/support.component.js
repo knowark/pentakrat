@@ -8,7 +8,10 @@ import { Component } from 'base/component'
 const tag = 'support-main'
 export class SupportComponent extends Component {
   init (_) {
-    this.state = {}
+    this.state = {
+      code: '',
+      trust: {}
+    }
     this.networkManager = this.resolve('NetworkManager')
     return super.init()
   }
@@ -24,6 +27,7 @@ export class SupportComponent extends Component {
 
     <ark-modal title="Trust Leader" background="success" 
       horizontal="center" vertical="center" width="80vw" height="70vh">
+      <p data-code></p>
       <ark-button slot="action" data-accept listen on-click="onAccept">
         Aceptar
       </ark-button>
@@ -34,13 +38,16 @@ export class SupportComponent extends Component {
 
   onTrust(event) {
     event.stopPropagation()
+    this.state.trust = JSON.parse(atob(this.state.code) || '{}')
+    this.select('[data-code]').textContent = JSON.stringify(this.state.trust)
     this.select('ark-modal').open()
   }
 
   async onAccept(event) {
     event.stopPropagation()
-    const data = JSON.parse(atob(this.state.code))
+    const data = this.state.trust
     await this.networkManager.trust({ data })
+    this.select('ark-modal').close()
   }
 }
 

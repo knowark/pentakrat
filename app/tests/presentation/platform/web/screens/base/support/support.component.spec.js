@@ -46,12 +46,10 @@ describe('SupportComponent', function () {
     component.networkManager = {
       trust: (entry) => { givenEntry = entry }
     }
-
-    component.state.code = btoa(JSON.stringify({ 
+    component.state.trust = { 
       address: 'LEADER123',
       proposal: 'https://proposal.example.com'
-    }))
-
+    }
     const modal = component.select('ark-modal')
     modal.open()
     const button = modal.select('[data-accept]')

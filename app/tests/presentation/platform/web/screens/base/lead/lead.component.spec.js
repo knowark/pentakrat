@@ -31,4 +31,15 @@ describe('LeadComponent', function () {
     expect(component).toBe(component.init())                 
     expect(component.tagName).toEqual('LEAD-MAIN')
   })                                                         
+
+  it('generates the trust code of the leader', () => {
+    const button = component.select('[data-generate]')
+
+    button.click()
+
+    const textarea = component.select('[data-code]')
+    expect(textarea.value).toEqual(
+      'eyJhZGRyZXNzIjoiUFVCTElDX0FERFJFU1MiLCJwcm9wb3NhbCI6IiJ9'
+    )
+  })
 })
