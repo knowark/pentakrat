@@ -32,10 +32,10 @@ export class SupportComponent extends Component {
 
       <dl>
         <dt>Proposal</dt>
-        <dd>${this.state.trust.proposal}</dd>
+        <dd data-proposal>${this.state.trust.proposal}</dd>
 
         <dt>Leader</dt>
-        <dd>${this.state.trust.address}</dd>
+        <dd data-address>${this.state.trust.address}</dd>
       </dl>
 
       <ark-button slot="action" data-accept listen on-click="onAccept">
@@ -49,7 +49,8 @@ export class SupportComponent extends Component {
   onTrust (event) {
     event.stopPropagation()
     this.state.trust = JSON.parse(atob(this.state.code) || '{}')
-    //this.select('[data-code]').textContent = JSON.stringify(this.state.trust)
+    this.select('[data-proposal]').textContent = this.state.trust.proposal
+    this.select('[data-address]').textContent = this.state.trust.address 
     this.select('ark-modal').open()
   }
 
