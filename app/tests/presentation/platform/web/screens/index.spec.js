@@ -1,19 +1,19 @@
-import { Injectark } from '@knowark/injectarkjs'                  
-import { FACTORIES } from 'factories'                             
-import { setMainRoutes } from 'screens/index.js'         
-                                                                  
-describe('Screens', () => {                                 
-  let main = null                                                 
-  beforeEach(() => {                                              
-    main = document.createElement('main')                         
+import { Injectark } from '@knowark/injectarkjs'
+import { FACTORIES } from 'factories'
+import { setMainRoutes } from 'screens/index.js'
+
+describe('Screens', () => {
+  let main = null
+  beforeEach(() => {
+    main = document.createElement('main')
     main.appendChild(document.createElement('div'))
-    document.body.appendChild(main)                               
-  })                                                              
-                                                                  
-  afterEach(() => {                                               
-    main.remove()                                                 
-    main = null                                                   
-  })                                                              
+    document.body.appendChild(main)
+  })
+
+  afterEach(() => {
+    main.remove()
+    main = null
+  })
 
   it("navigates to the application's screens", async () => {
     const config = {}
@@ -29,7 +29,7 @@ describe('Screens', () => {
     setMainRoutes(main, injector, '/')
 
     const testTable = [
-      { path: '/', tagName: 'APP-ROOT' },
+      { path: '/', tagName: 'APP-ROOT' }
     ]
 
     for (const record of testTable) {
@@ -37,5 +37,4 @@ describe('Screens', () => {
       expect(main.firstChild.tagName).toEqual(record.tagName)
     }
   })
-                                                                  
 })

@@ -4,7 +4,7 @@ import { Component } from 'base/component'
 
 const tag = 'analyze-main'
 export class AnalyzeComponent extends Component {
-  init(context = {}) {
+  init (context = {}) {
     this.supportLevel = context.supportLevel || 0
     this.juras = context.juras || 0
     return super.init()

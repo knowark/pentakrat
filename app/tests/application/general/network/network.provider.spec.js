@@ -1,5 +1,5 @@
 import {
-  NetworkProvider, MemoryNetworkProvider 
+  NetworkProvider, MemoryNetworkProvider
 } from 'application/general/network/index.js'
 
 describe('NetworkProvider', function () {
@@ -10,10 +10,10 @@ describe('NetworkProvider', function () {
 
   it('defines a general interface', async () => {
     const methods = [
-      {name: 'connect', arguments: {}}, 
-      {name: 'trust', arguments: {}},
-      {name: 'distrust', arguments: {}},
-      {name: 'address', arguments: {}}
+      { name: 'connect', arguments: {} },
+      { name: 'trust', arguments: {} },
+      { name: 'distrust', arguments: {} },
+      { name: 'address', arguments: {} }
     ]
 
     for (const method of methods) {
@@ -26,7 +26,7 @@ describe('NetworkProvider', function () {
   })
 })
 
-describe('MemoryNetworkProvider', function () {     
+describe('MemoryNetworkProvider', function () {
   let provider = null
   beforeEach(() => {
     provider = new MemoryNetworkProvider({})

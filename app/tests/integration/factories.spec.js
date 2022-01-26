@@ -1,19 +1,19 @@
-import { Injectark } from '@knowark/injectarkjs'                      
-import { FACTORIES } from '../../src/integration/factories'                                 
-                                                                      
-const FACTORY_TESTS = {                                               
-  base: [                                                             
-    ['Router', 'Routark'], 
+import { Injectark } from '@knowark/injectarkjs'
+import { FACTORIES } from '../../src/integration/factories'
+
+const FACTORY_TESTS = {
+  base: [
+    ['Router', 'Routark'],
     ['NetworkProvider', 'MemoryNetworkProvider'],
     ['NetworkManager', 'NetworkManager'],
-    ['NetworkInformer', 'NetworkInformer'],
+    ['NetworkInformer', 'NetworkInformer']
   ],
   check: [
   ],
   blockchain: [
-    ['NetworkProvider', 'BlockchainNetworkProvider'],
-  ],
-}                                                                     
+    ['NetworkProvider', 'BlockchainNetworkProvider']
+  ]
+}
 
 describe('Factories', function () {
   it('resolve their resources through the injector', function () {
@@ -28,5 +28,3 @@ describe('Factories', function () {
     }
   })
 })
-
-

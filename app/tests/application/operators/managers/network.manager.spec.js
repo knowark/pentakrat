@@ -4,10 +4,10 @@ import { NetworkManager } from 'application/operators/managers/index.js'
 describe('NetworkManager', function () {
   let manager = null
   beforeEach(() => {
-    manager = new NetworkManager({ 
-      networkProvider: new MemoryNetworkProvider() 
+    manager = new NetworkManager({
+      networkProvider: new MemoryNetworkProvider()
     })
-  })                                                         
+  })
 
   it('is defined', () => {
     expect(manager).toBeTruthy()
@@ -22,8 +22,8 @@ describe('NetworkManager', function () {
   it('establishes a new trust bond between', async () => {
     const entry = {
       data: {
-        leader: "LEADER_ADDRESS",
-        proposal: "PROPOSAL_URI"
+        leader: 'LEADER_ADDRESS',
+        proposal: 'PROPOSAL_URI'
       }
     }
     await manager.trust(entry)

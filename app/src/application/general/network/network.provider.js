@@ -1,34 +1,34 @@
 export class NetworkProvider {
-  async connect() {
+  async connect () {
     throw new Error('Not implemented')
   }
 
   /** @param {{ supporter: string, leader: string, proposal: string  }} */
-  async trust(_trustEntry) {
+  async trust (_trustEntry) {
     throw new Error('Not implemented')
   }
 
-  async distrust() {
+  async distrust () {
     throw new Error('Not implemented')
   }
-  
-  async address() {
+
+  async address () {
     throw new Error('Not implemented')
   }
 }
 
 export class MemoryNetworkProvider extends NetworkProvider {
-  async connect() {
+  async connect () {
     this._connected = true
   }
 
   /** @param {{ supporter: string, leader: string, proposal: string  }} */
-  async trust(trustEntry) {
+  async trust (trustEntry) {
     this._trust = trustEntry
   }
 
   /** @return string */
-  async address() {
+  async address () {
     return 'PUBLIC_ADDRESS'
   }
 }

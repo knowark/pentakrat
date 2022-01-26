@@ -5,9 +5,9 @@ import 'screens/base/support/index.js'
 /** @typedef { import("base/component").Component } Component **/
 
 describe('SupportComponent', function () {
-  let container = null                                       
-  let component = null                                       
-  beforeEach(() => {                                         
+  let container = null
+  let component = null
+  beforeEach(() => {
     container = document.createElement('div')
     component = /** @type {Component} */ (
       document.createElement('support-main'))
@@ -16,22 +16,22 @@ describe('SupportComponent', function () {
       return injector.resolve(resource)
     }
 
-    document.body.append(container)                          
-    container.append(component)                              
-  })                                                         
-                                                             
-  afterEach(() => {                                          
-    container.remove()                                       
-    container = null                                         
-    component = null                                         
+    document.body.append(container)
+    container.append(component)
   })
-                                                             
-  it('can be instantiated', () => {                          
-    expect(component).toBeTruthy()                           
-                                                             
-    expect(component).toBe(component.init())                 
+
+  afterEach(() => {
+    container.remove()
+    container = null
+    component = null
+  })
+
+  it('can be instantiated', () => {
+    expect(component).toBeTruthy()
+
+    expect(component).toBe(component.init())
     expect(component.tagName).toEqual('SUPPORT-MAIN')
-  })                                                         
+  })
 
   it('opens up a trust modal on trust clicked', () => {
     const button = component.select('[data-trust]')
@@ -46,7 +46,7 @@ describe('SupportComponent', function () {
     component.networkManager = {
       trust: (entry) => { givenEntry = entry }
     }
-    component.state.trust = { 
+    component.state.trust = {
       address: 'LEADER123',
       proposal: 'https://proposal.example.com'
     }

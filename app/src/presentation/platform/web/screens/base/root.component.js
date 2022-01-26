@@ -59,6 +59,14 @@ export class RootComponent extends Component {
   async onConnect (event) {
     event.stopPropagation()
     await this.networkManager.connect({})
+    Alert.launch({
+      title: 'Success',
+      text: 'You are now connected to the network',
+      showConfirmButton: true,
+      confirmButtonText: 'Confirm',
+      confirmButtonBackground: 'success',
+      showCancelButton: false
+    }, this)
   }
 
   /** @param {CustomEvent} event */
@@ -74,7 +82,8 @@ export class RootComponent extends Component {
     event.stopPropagation()
     Alert.launch({
       title: 'Error',
-      text: event.detail.message
+      text: event.detail.message,
+      showCancelButton: false
     }, this)
   }
 

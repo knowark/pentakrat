@@ -36,7 +36,7 @@ export class LeadComponent extends Component {
     this.render()
   }
 
-  onGenerate(event) {
+  onGenerate (event) {
     event.stopPropagation()
     const code = btoa(JSON.stringify({
       address: this.state.address,

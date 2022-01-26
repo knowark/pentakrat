@@ -8,7 +8,7 @@ export function setMainRoutes (mainComponent, injector) {
         const component = document.createElement('app-root')
         setMainComponent(mainComponent, component)
       }
-    },
+    }
   ])
 }
 

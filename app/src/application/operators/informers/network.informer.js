@@ -2,19 +2,19 @@ import { NetworkProvider } from '../../general/network/index.js'
 
 export class NetworkInformer {
   /** @param {{ networkProvider: NetworkProvider }} */
-  constructor({ networkProvider }) {
+  constructor ({ networkProvider }) {
     this.networkProvider = networkProvider
   }
 
-  async getSupportLevel(_entry) {
+  async getSupportLevel (_entry) {
     return { data: 1 }
   }
 
-  async getJuras(_entry) {
+  async getJuras (_entry) {
     return { data: 1 }
   }
 
-  async getAddress(_entry) {
+  async getAddress (_entry) {
     return { data: await this.networkProvider.address() }
   }
 }

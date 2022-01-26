@@ -1,4 +1,4 @@
-import { BaseFactory } from './base.factory.js'  
-                                                      
-export class CheckFactory extends BaseFactory {       
-}                                                     
+import { BaseFactory } from './base.factory.js'
+
+export class CheckFactory extends BaseFactory {
+}

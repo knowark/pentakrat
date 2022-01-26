@@ -36,14 +36,14 @@ export class SupportComponent extends Component {
     return super.render()
   }
 
-  onTrust(event) {
+  onTrust (event) {
     event.stopPropagation()
     this.state.trust = JSON.parse(atob(this.state.code) || '{}')
     this.select('[data-code]').textContent = JSON.stringify(this.state.trust)
     this.select('ark-modal').open()
   }
 
-  async onAccept(event) {
+  async onAccept (event) {
     event.stopPropagation()
     const data = this.state.trust
     await this.networkManager.trust({ data })

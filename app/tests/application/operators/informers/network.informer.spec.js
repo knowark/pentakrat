@@ -1,13 +1,13 @@
 import { MemoryNetworkProvider } from 'application/general/network/index.js'
 import { NetworkInformer } from 'application/operators/informers/index.js'
 
-describe('NetworkInformer', function () {                      
-  let informer = null                                       
-  beforeEach(() => {                                         
-    informer = new NetworkInformer({ 
-      networkProvider: new MemoryNetworkProvider() 
+describe('NetworkInformer', function () {
+  let informer = null
+  beforeEach(() => {
+    informer = new NetworkInformer({
+      networkProvider: new MemoryNetworkProvider()
     })
-  })                                                         
+  })
 
   it('is defined', () => {
     expect(informer).toBeTruthy()

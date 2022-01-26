@@ -22,4 +22,3 @@ export async function main (config) {
 if (typeof process !== 'object') {
   main(window.config)
 }
-
