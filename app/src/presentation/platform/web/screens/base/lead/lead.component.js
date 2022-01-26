@@ -16,14 +16,13 @@ export class LeadComponent extends Component {
 
   render () {
     this.content = /* html */ `
-    <ark-card class="${tag}_content" title="Lead">
-      <ark-input listen on-alter="{{ state.proposal }}"></ark-input>
+    <ark-card class="${tag}__content" title="Lead">
+      <ark-input listen on-alter="{{ state.proposal }}"
+        placeholder="Proposal"></ark-input>
       <p class=${tag}_address>${this.state.address}</p>
       <ark-button data-generate background="success"
-        listen on-click="onGenerate">
-        GENERATE
-      </ark-button>
-      <textarea data-code class="${tag}_code" readonly rows="7" cols="40">
+        listen on-click="onGenerate">GENERATE</ark-button>
+      <textarea data-code class="${tag}_code" readonly rows="3" cols="50">
         LEADER-CODE
       </textarea>
     </ark-card>
@@ -47,17 +46,14 @@ export class LeadComponent extends Component {
 }
 
 const styles = `
-.${tag} .ark-card {
+.${tag}__content {
   display: grid;
   justify-items: center;
 }
 .${tag} .ark-card__body {
   display: grid;
+  gap: 1.5rem;
   justify-items: center;
 }
-.${tag}_qrcode {
-  width: min(50vh, 10rem);
-}
-
 `
 Component.define(tag, LeadComponent, styles)

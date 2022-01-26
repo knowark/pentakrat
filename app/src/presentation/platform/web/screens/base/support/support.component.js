@@ -18,8 +18,7 @@ export class SupportComponent extends Component {
 
   render () {
     this.content = /* html */ `
-    <ark-card title="Pentakrat" subtitle="The fifth power">
-      <h1>SUPPORT</h1>
+    <ark-card class="${tag}__content" title="Support">
       <ark-input listen on-alter="{{ state.code }}"></ark-input>
       <ark-button data-trust background="primary" color="secondary"
         listen on-click="onTrust">Trust</ark-button>
@@ -52,7 +51,14 @@ export class SupportComponent extends Component {
 }
 
 const styles = `
-.${tag} .ark-modal {
+.${tag}__content {
+  display: grid;
+  justify-items: center;
+}
+.${tag} .ark-card__body {
+  display: grid;
+  gap: 1.5rem;
+  justify-items: center;
 }
 `
 Component.define(tag, SupportComponent, styles)

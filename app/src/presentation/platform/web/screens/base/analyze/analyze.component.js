@@ -13,13 +13,13 @@ export class AnalyzeComponent extends Component {
   render () {
     if (!this.supportLevel) {
       this.content = /* html */ `
-      <ark-card title="Analyze">
+      <ark-card class="${tag}__content" title="Analyze">
         <h1>No trust bonds have been established yet.</h1>
       </ark-card>
       `
     } else {
       this.content = /* html */ `
-      <ark-card title="Analyze">
+      <ark-card class="${tag}__content" title="Analyze">
         <div class=${tag}__stat>
           <h2>Support Level</h2>
           <h3>${this.supportLevel}</h3>
@@ -43,11 +43,16 @@ export class AnalyzeComponent extends Component {
 }
 
 const styles = `
+.${tag}__content {
+  display: grid;
+  justify-items: center;
+}
 .${tag} .ark-card__body {
   display: grid;
-  gap: 2rem;
-  align-items: center;
+  gap: 1.5rem;
   justify-items: center;
+  align-items: center;
+  width: 100%;
 }
 .${tag}__stat {
   background: gray;
