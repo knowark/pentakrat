@@ -10,7 +10,10 @@ export class SupportComponent extends Component {
   init (_) {
     this.state = {
       code: '',
-      trust: {}
+      trust: {
+        proposal: '',
+        address: ''
+      }
     }
     this.networkManager = this.resolve('NetworkManager')
     return super.init()
@@ -26,7 +29,15 @@ export class SupportComponent extends Component {
 
     <ark-modal title="Trust Leader" background="success" 
       horizontal="center" vertical="center" width="80vw" height="70vh">
-      <p data-code></p>
+
+      <dl>
+        <dt>Proposal</dt>
+        <dd>${this.state.trust.proposal}</dd>
+
+        <dt>Leader</dt>
+        <dd>${this.state.trust.address}</dd>
+      </dl>
+
       <ark-button slot="action" data-accept listen on-click="onAccept">
         Aceptar
       </ark-button>
@@ -38,7 +49,7 @@ export class SupportComponent extends Component {
   onTrust (event) {
     event.stopPropagation()
     this.state.trust = JSON.parse(atob(this.state.code) || '{}')
-    this.select('[data-code]').textContent = JSON.stringify(this.state.trust)
+    //this.select('[data-code]').textContent = JSON.stringify(this.state.trust)
     this.select('ark-modal').open()
   }
 
@@ -57,8 +68,19 @@ const styles = `
 }
 .${tag} .ark-card__body {
   display: grid;
-  gap: 1.5rem;
   justify-items: center;
+}
+.${tag} dl {
+  display: grid;
+  height: 100%;
+  gap: 1.5rem;
+  align-items: center;
+  justify-items: center;
+  grid-template-columns: 1fr 1fr;
+  padding: 1rem;
+}
+.${tag} dt {
+  font-weight: bold;
 }
 `
 Component.define(tag, SupportComponent, styles)
