@@ -22,7 +22,8 @@ export class SupportComponent extends Component {
   render () {
     this.content = /* html */ `
     <ark-card class="${tag}__content" title="Support">
-      <ark-input listen on-alter="{{ state.code }}"></ark-input>
+      <ark-input placeholder="Code" listen on-alter="{{ state.code }}">
+      </ark-input>
       <ark-button data-trust background="primary" color="secondary"
         listen on-click="onTrust">Trust</ark-button>
     </ark-card>
