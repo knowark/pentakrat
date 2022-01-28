@@ -20,11 +20,13 @@ export class LeadComponent extends Component {
       <ark-input listen on-alter="{{ state.proposal }}"
         placeholder="Proposal"></ark-input>
       <p class=${tag}_address>${this.state.address}</p>
-      <ark-button data-generate background="success"
+      <ark-button data-generate background="primary" color="secondary"
         listen on-click="onGenerate">GENERATE</ark-button>
-      <textarea data-code class="${tag}_code" readonly rows="3" cols="40">
+      <p data-code 
+        class="${tag}_code" 
+         >
         LEADER-CODE
-      </textarea>
+      </p>
     </ark-card>
     `
     return super.render()
@@ -41,7 +43,7 @@ export class LeadComponent extends Component {
       address: this.state.address,
       proposal: this.state.proposal
     }))
-    this.select('[data-code]').value = code
+    this.select('[data-code]').textContent = code
   }
 }
 
@@ -54,6 +56,14 @@ const styles = `
   display: grid;
   gap: 1.5rem;
   justify-items: center;
+}
+.${tag}_code {
+  user-select: text;
+  word-break: break-all;
+  text-align: justify;
+  text-align-last: center;
+  border: 1px dotted;
+  padding: 1rem;
 }
 `
 Component.define(tag, LeadComponent, styles)

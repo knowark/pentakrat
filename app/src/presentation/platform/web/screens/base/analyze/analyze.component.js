@@ -21,12 +21,12 @@ export class AnalyzeComponent extends Component {
       this.content = /* html */ `
       <ark-card class="${tag}__content" title="ANALIZE">
         <div class=${tag}__stat>
-          <h2>Support Level</h2>
-          <h3>${this.supportLevel}</h3>
+          <h2 class="${tag}__stat-title">SUPPORT LEVEL</h2>
+          <h3 class="${tag}__stat-number">${this.supportLevel}</h3>
         </div>
         <div class=${tag}__stat>
-          <h2>Juras</h2>
-          <h3>${this.juras}</h3>
+          <h2 class="${tag}__stat-title">JURAS</h2>
+          <h3 class="${tag}__stat-number">${this.juras}</h3>
         </div>
       </ark-card>
       `
@@ -42,7 +42,7 @@ export class AnalyzeComponent extends Component {
   }
 }
 
-const styles = `
+const styles = /*css*/`
 .${tag}__content {
   display: grid;
   justify-items: center;
@@ -55,13 +55,22 @@ const styles = `
   width: 100%;
 }
 .${tag}__stat {
-  background: gray;
   border-radius: 5px;
-  width: 50%;
+  width: 80%;
 }
-.${tag}__stat h2 {
-  background: #004d25;
-  color: white;
+.${tag}__stat-title {
+  background: var(--primary);
+  color: var(--secondary);
+  border-radius: 5px 5px 0px 0px;
+  font-size: 1.05rem;
+  font-weight: 300;
+  letter-spacing: 0.1rem;
+  padding: 1rem;
+}
+.${tag}__stat-number {
+  font-size: 1.8rem;
+  border: 1px solid black;
+  padding: 2rem;
 }
 `
 Component.define(tag, AnalyzeComponent, styles)

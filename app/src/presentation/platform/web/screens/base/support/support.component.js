@@ -25,10 +25,10 @@ export class SupportComponent extends Component {
       <ark-input placeholder="Code" listen on-alter="{{ state.code }}">
       </ark-input>
       <ark-button data-trust background="primary" color="secondary"
-        listen on-click="onTrust">Trust</ark-button>
+        listen on-click="onTrust">-trust-</ark-button>
     </ark-card>
 
-    <ark-modal title="Trust Leader" background="success" 
+    <ark-modal title="TRUST LEADER" background="primary" color="secondary" 
       horizontal="center" vertical="center" width="80vw" height="70vh">
 
       <dl>
@@ -83,6 +83,16 @@ const styles = `
 }
 .${tag} dt {
   font-weight: bold;
+}
+.ark-modal__content {
+  grid-template-rows: 70px auto 70px;
+}
+.ark-modal__header {
+  text-align: center;
+  letter-spacing: 0.2rem;
+}
+[data-trust] {
+  font-size: 1.2rem;
 }
 `
 Component.define(tag, SupportComponent, styles)
