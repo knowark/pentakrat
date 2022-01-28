@@ -52,7 +52,8 @@
   <script>
     window.config = {
       factory: "<%= process.env.FACTORY %>",
-      version: <%= process.env.VERSION %>,
+      version: "<%= process.env.VERSION %>",
+      missionAddress: "<%= process.env.MISSION_ADDRESS %>",
     }
   </script>
 </head>

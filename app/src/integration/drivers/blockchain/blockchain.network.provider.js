@@ -1,31 +1,39 @@
 import { ethers } from 'ethers'
 import { NetworkProvider } from 'application/general/network/index.js'
+import { abi } from './contract.abi.js'
 
 export class BlockchainNetworkProvider extends NetworkProvider {
   constructor ({ global = globalThis, _ethers = ethers } = {}) {
     super()
-    this._provider = null
+    this._signer = null
     this.global = global
     this.ethers = _ethers
   }
 
-  get provider () {
-    if (!this._provider) {
-      throw new Error('Please connect to the blockchain first.')
+  get signer () {
+    if (!this._signer) {
+      throw new Error('Please ensure your account is connected.')
     }
-    return this._provider
+    return this._signer
   }
 
   async connect () {
     if (!this.global.ethereum) {
       throw new Error('You need Metamask to connect to the blockchain.')
     }
-    this._provider = new this.ethers.providers.Web3Provider(
+    const provider = new this.ethers.providers.Web3Provider(
       this.global.ethereum)
+    this._signer = provider.getSigner()
   }
 
   async address () {
-    const signer = this.provider.getSigner()
-    return await signer.getAddress()
+    return await this.signer.getAddress()
+  }
+
+  async trust (entry) {
+    const missionAddress = this.global.config.missionAddress
+    const contract = new this.ethers.Contract(
+      missionAddress, abi, this.signer)
+    await contract.establishTrust(entry.address, entry.proposal)
   }
 }

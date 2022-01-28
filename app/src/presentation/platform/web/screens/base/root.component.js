@@ -83,6 +83,7 @@ export class RootComponent extends Component {
     Alert.launch({
       title: 'Error',
       text: event.detail.message,
+      confirmButtonBackground: 'danger',
       showCancelButton: false
     }, this)
   }

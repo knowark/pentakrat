@@ -10,7 +10,10 @@ describe('BlockchainNetworkProvider', function () {
   let provider = null
   beforeEach(() => {
     const mockGlobal = {
-      ethereum: { ethereum: 'library' }
+      ethereum: { ethereum: 'library' },
+      config: {
+        missionAddress: 'MISSION_ADDRESS'
+      }
     }
     const mockEthers = {
       providers: {
@@ -20,7 +23,13 @@ describe('BlockchainNetworkProvider', function () {
             getAddress: async () => 'CONNECTED_USER_ADDRESS'
           })
         }))
-      }
+      },
+      Contract: jest.fn().mockImplementation((address, abi, signer) => ({
+        establishTrust: jest.fn().mockImplementation((address, proposal) => {
+        })
+      }))
+
+      
     }
     provider = new BlockchainNetworkProvider({
       global: mockGlobal,
@@ -53,17 +62,17 @@ describe('BlockchainNetworkProvider', function () {
       'You need Metamask to connect to the blockchain.')
   })
 
-  it('raises an error if the provider has not been initialized', async () => {
+  it('raises an error if the signer has not been connected', async () => {
     let error = null
 
     try {
-      await provider.provider
+      await provider.signer
     } catch (_error) {
       error = _error
     }
 
     expect(error.message).toBe(
-      'Please connect to the blockchain first.')
+      'Please ensure your account is connected.')
   })
 
   it('retrieves the connected user address', async () => {
@@ -72,5 +81,18 @@ describe('BlockchainNetworkProvider', function () {
     const address = await provider.address()
 
     expect(address).toBe('CONNECTED_USER_ADDRESS')
+  })
+
+  it('establishes trust between a supporter and a leader', async () => {
+    await provider.connect()
+    const entry = { address: "LEADER_ADDRESS", proposal: "THE_PROPOSAL" }
+
+    await provider.trust(entry)
+
+    expect(provider.ethers.Contract.mock.calls[0][0]).toBe("MISSION_ADDRESS")
+    const establishTrust = (
+      provider.ethers.Contract.mock.results[0].value.establishTrust)
+    expect(establishTrust.mock.calls[0]).toEqual(
+      [entry.address, entry.proposal])
   })
 })

@@ -22,7 +22,7 @@ export class LeadComponent extends Component {
       <p class=${tag}_address>${this.state.address}</p>
       <ark-button data-generate background="success"
         listen on-click="onGenerate">GENERATE</ark-button>
-      <textarea data-code class="${tag}_code" readonly rows="3" cols="50">
+      <textarea data-code class="${tag}_code" readonly rows="3" cols="40">
         LEADER-CODE
       </textarea>
     </ark-card>

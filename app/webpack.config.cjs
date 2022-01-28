@@ -28,10 +28,8 @@ module.exports = (env, argv) => {
         PRODUCTION: !devMode,
         ARK_DESIGN: 'ark',
         FACTORY: 'blockchain',
-        VERSION: JSON.stringify(require('./package.json').version),
-        API_URL: JSON.stringify(
-          devMode ? 'http://api.tempos.local' : 'https://api.tempos.site'
-        )
+        VERSION: require('./package.json').version,
+        MISSION_ADDRESS: "0xF950D26314d3526b778B2E479916139e1479df45",
       }),
       new CopyPlugin({
         patterns: ['src/.htaccess']
