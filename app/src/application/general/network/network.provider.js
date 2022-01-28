@@ -15,6 +15,10 @@ export class NetworkProvider {
   async address () {
     throw new Error('Not implemented')
   }
+
+  async trustLevel () {
+    throw new Error('Not implemented')
+  }
 }
 
 export class MemoryNetworkProvider extends NetworkProvider {
@@ -30,5 +34,9 @@ export class MemoryNetworkProvider extends NetworkProvider {
   /** @return string */
   async address () {
     return 'PUBLIC_ADDRESS'
+  }
+
+  async trustLevel () {
+    return 1
   }
 }

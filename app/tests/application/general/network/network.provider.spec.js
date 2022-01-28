@@ -13,7 +13,8 @@ describe('NetworkProvider', function () {
       { name: 'connect', arguments: {} },
       { name: 'trust', arguments: {} },
       { name: 'distrust', arguments: {} },
-      { name: 'address', arguments: {} }
+      { name: 'address', arguments: {} },
+      { name: 'trustLevel', arguments: {} }
     ]
 
     for (const method of methods) {
@@ -57,5 +58,11 @@ describe('MemoryNetworkProvider', function () {
     const address = await provider.address()
 
     expect(address.length).toBeTruthy()
+  })
+
+  it('gets the trust level of the connected user', async () => {
+    const trustLevel = await provider.trustLevel()
+
+    expect(trustLevel).toBe(1)
   })
 })

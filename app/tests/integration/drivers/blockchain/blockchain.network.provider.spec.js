@@ -26,7 +26,8 @@ describe('BlockchainNetworkProvider', function () {
       },
       Contract: jest.fn().mockImplementation((address, abi, signer) => ({
         establishTrust: jest.fn().mockImplementation((address, proposal) => {
-        })
+        }),
+        getTrustLevel: jest.fn().mockImplementation(() => 99)
       }))
 
       
@@ -94,5 +95,13 @@ describe('BlockchainNetworkProvider', function () {
       provider.ethers.Contract.mock.results[0].value.establishTrust)
     expect(establishTrust.mock.calls[0]).toEqual(
       [entry.address, entry.proposal])
+  })
+
+  it('gets the trust level of a leader', async () => {
+    await provider.connect()
+
+    const trustLevel = await provider.trustLevel()
+
+    expect(trustLevel).toEqual(99)
   })
 })

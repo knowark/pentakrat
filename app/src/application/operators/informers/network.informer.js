@@ -7,7 +7,7 @@ export class NetworkInformer {
   }
 
   async getSupportLevel (_entry) {
-    return { data: 1 }
+    return { data: await this.networkProvider.trustLevel() }
   }
 
   async getJuras (_entry) {
