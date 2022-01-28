@@ -38,15 +38,16 @@ export class RootComponent extends Component {
     </header>
 
     <article class="${tag}__content" data-content>
+      <analyze-main></analyze-main>
     </article>
 
     <footer>
       <ark-tabs background="success" listen on-tabs:selected="onTab">
+        <ark-tabs-item title="Analyze" tab="analyze">
+        </ark-tabs-item>
         <ark-tabs-item title="Support" tab="support">
         </ark-tabs-item>
         <ark-tabs-item title="Lead" tab="lead">
-        </ark-tabs-item>
-        <ark-tabs-item title="Analyze" tab="analyze">
         </ark-tabs-item>
       </ark-tabs>
     </footer>
@@ -67,6 +68,7 @@ export class RootComponent extends Component {
       confirmButtonBackground: 'success',
       showCancelButton: false
     }, this)
+    this.render()
   }
 
   /** @param {CustomEvent} event */
