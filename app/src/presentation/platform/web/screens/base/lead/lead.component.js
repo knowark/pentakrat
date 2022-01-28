@@ -16,7 +16,7 @@ export class LeadComponent extends Component {
 
   render () {
     this.content = /* html */ `
-    <ark-card class="${tag}__content" title="Lead">
+    <ark-card class="${tag}__content" title="LEAD">
       <ark-input listen on-alter="{{ state.proposal }}"
         placeholder="Proposal"></ark-input>
       <p class=${tag}_address>${this.state.address}</p>

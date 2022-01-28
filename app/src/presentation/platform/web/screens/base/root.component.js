@@ -28,11 +28,13 @@ export class RootComponent extends Component {
     this.content = /* html */ `
     <header class="${tag}__nav">
       <nav class="${tag}__navbar" background='primary'>
-        <img class="${tag}__navbar_logo" src="${logo}" alt="Pentakrat">
-        <span>Pentakrat</span>
+        <div class="${tag}__navbar_brand">
+          <img class="${tag}__navbar_logo" src="${logo}" alt="Pentakrat">
+          <span>PENTAKRAT</span>
+        </div>
         <div class="${tag}__navbar_connect">
-          <ark-button background="success" data-connect
-            listen on-click="onConnect">Connect</ark-button>
+          <ark-button class="${tag}__navbar_connect-button" background="secondary" color="primary" data-connect
+            listen on-click="onConnect">connect</ark-button>
         </div>
       </nav>
     </header>
@@ -42,12 +44,12 @@ export class RootComponent extends Component {
     </article>
 
     <footer>
-      <ark-tabs background="success" listen on-tabs:selected="onTab">
-        <ark-tabs-item title="Analyze" tab="analyze">
+      <ark-tabs background="light" listen on-tabs:selected="onTab">
+        <ark-tabs-item title="ANALIZE" tab="analyze">
         </ark-tabs-item>
-        <ark-tabs-item title="Support" tab="support">
+        <ark-tabs-item title="SUPPORT" tab="support">
         </ark-tabs-item>
-        <ark-tabs-item title="Lead" tab="lead">
+        <ark-tabs-item title="LEAD" tab="lead">
         </ark-tabs-item>
       </ark-tabs>
     </footer>
@@ -103,20 +105,27 @@ export class RootComponent extends Component {
 const styles = /* css */ `
   .${tag} {
     display: grid;
-    background-color: dimgray;
     grid-template-rows: auto 4fr auto;
     height: 100%;
     width: 100%;
   }
   .${tag}__navbar {
     display: grid;
-    height: 3rem;
-    color: white;
-    align-items: center;
-    justify-items: center;
+    place-items: center;
     justify-content: space-between;
-    grid-template-columns: auto auto auto;
+    grid-auto-flow: column;
     background-color: var(--primary);
+    color: white;
+    padding:0.5rem 0.2rem;
+  }
+  .${tag}__navbar_brand {
+    font-size: 1.2rem;
+    letter-spacing: 0.2rem;
+    color: var(--secondary);
+    display: inherit;
+    grid-auto-flow: column;
+    place-items: center;
+    gap: 0.5rem;
   }
   .${tag}__navbar_logo {
     width: 3rem;
@@ -125,10 +134,37 @@ const styles = /* css */ `
     padding: 0.5rem;
   }
   .${tag}__content {
-    padding: 5vh calc(25vw - 3rem);
+    display:grid;
+    place-items: center;
   }
   .${tag} footer {
     padding: 1rem;
   }
+  .${tag}__navbar_connect-button{
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+  .ark-tabs-item {
+    font-size: 1.2rem;
+    letter-spacing: 0.2rem;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+  }
+  .ark-tabs-item[active] {
+    background: var(--primary);
+    color: var(--secondary);
+    border: 1px solid var(--primary);
+  }
+  .ark-card__title {
+    font-size: 1.4rem;
+    letter-spacing: 0.2rem;
+    color: var(--primary)
+  }
+  .analyze-main,
+  .lead-main,
+  .support-main {
+    width: 70%;
+  }
+  
 `
 Component.define(tag, RootComponent, styles)

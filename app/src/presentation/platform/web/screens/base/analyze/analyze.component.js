@@ -13,13 +13,13 @@ export class AnalyzeComponent extends Component {
   render () {
     if (!this.supportLevel) {
       this.content = /* html */ `
-      <ark-card class="${tag}__content" title="Analyze">
+      <ark-card class="${tag}__content" title="ANALYZE">
         <h1>No trust bonds have been established yet.</h1>
       </ark-card>
       `
     } else {
       this.content = /* html */ `
-      <ark-card class="${tag}__content" title="Analyze">
+      <ark-card class="${tag}__content" title="ANALIZE">
         <div class=${tag}__stat>
           <h2>Support Level</h2>
           <h3>${this.supportLevel}</h3>
