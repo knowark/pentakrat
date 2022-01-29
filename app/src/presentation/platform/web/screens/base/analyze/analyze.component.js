@@ -70,7 +70,7 @@ const styles = /*css*/`
 .${tag}__stat-number {
   font-size: 1.8rem;
   border: 1px solid black;
-  padding: 2rem;
+  padding: 1.5rem;
 }
 `
 Component.define(tag, AnalyzeComponent, styles)

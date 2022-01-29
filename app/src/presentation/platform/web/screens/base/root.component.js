@@ -35,7 +35,7 @@ export class RootComponent extends Component {
         <div class="${tag}__navbar_connect">
           <ark-button class="${tag}__navbar_connect-button"
             background="secondary" color="primary" data-connect
-            listen on-click="onConnect">connect</ark-button>
+            listen on-click="onConnect">CONNECT</ark-button>
         </div>
       </nav>
     </header>
