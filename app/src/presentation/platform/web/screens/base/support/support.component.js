@@ -40,7 +40,7 @@ export class SupportComponent extends Component {
       </dl>
 
       <ark-button slot="action" data-accept listen on-click="onAccept">
-        Aceptar
+        CONFIRM
       </ark-button>
     </ark-modal>
     `
