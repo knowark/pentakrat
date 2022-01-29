@@ -38,7 +38,7 @@ describe('LeadComponent', function () {
     button.click()
 
     const textarea = component.select('[data-code]')
-    expect(textarea.value).toEqual(
+    expect(textarea.textContent).toEqual(
       'eyJhZGRyZXNzIjoiUFVCTElDX0FERFJFU1MiLCJwcm9wb3NhbCI6IiJ9'
     )
   })
