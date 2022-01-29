@@ -33,7 +33,8 @@ export class RootComponent extends Component {
           <span>PENTAKRAT</span>
         </div>
         <div class="${tag}__navbar_connect">
-          <ark-button class="${tag}__navbar_connect-button" background="secondary" color="primary" data-connect
+          <ark-button class="${tag}__navbar_connect-button"
+            background="secondary" color="primary" data-connect
             listen on-click="onConnect">connect</ark-button>
         </div>
       </nav>
@@ -45,7 +46,7 @@ export class RootComponent extends Component {
 
     <footer>
       <ark-tabs background="light" listen on-tabs:selected="onTab">
-        <ark-tabs-item title="ANALIZE" tab="analyze">
+        <ark-tabs-item title="ANALYZE" tab="analyze">
         </ark-tabs-item>
         <ark-tabs-item title="SUPPORT" tab="support">
         </ark-tabs-item>

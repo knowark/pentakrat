@@ -19,7 +19,7 @@ export class AnalyzeComponent extends Component {
       `
     } else {
       this.content = /* html */ `
-      <ark-card class="${tag}__content" title="ANALIZE">
+      <ark-card class="${tag}__content" title="ANALYZE">
         <div class=${tag}__stat>
           <h2 class="${tag}__stat-title">SUPPORT LEVEL</h2>
           <h3 class="${tag}__stat-number">${this.supportLevel}</h3>
