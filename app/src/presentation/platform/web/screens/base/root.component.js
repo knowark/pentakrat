@@ -47,10 +47,13 @@ export class RootComponent extends Component {
     <footer>
       <ark-tabs background="light" listen on-tabs:selected="onTab">
         <ark-tabs-item title="ANALYZE" tab="analyze">
+          <ark-icon name="fas fa-eye"></ark-icon>
         </ark-tabs-item>
         <ark-tabs-item title="SUPPORT" tab="support">
+          <ark-icon name="fas fa-hands-helping"></ark-icon>
         </ark-tabs-item>
         <ark-tabs-item title="LEAD" tab="lead">
+          <ark-icon name="fas fa-hand-sparkles"></ark-icon>
         </ark-tabs-item>
       </ark-tabs>
     </footer>
