@@ -14,7 +14,7 @@ describe('NetworkInformer', function () {
   })
 
   it('gets the support level of the trust held by the user', async () => {
-    const result = await informer.getSupportLevel({})
+    const result = await informer.getLevel({})
 
     expect(result.data).toBe(1)
   })

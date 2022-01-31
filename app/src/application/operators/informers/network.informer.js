@@ -6,11 +6,20 @@ export class NetworkInformer {
     this.networkProvider = networkProvider
   }
 
-  async getSupportLevel (_entry) {
-    return { data: await this.networkProvider.trustLevel() }
+  async getLevel (_entry) {
+    const trustLevel = await this.networkProvider.trustLevel()
+    return { data: trustLevel.toNumber() }
+  }
+
+  async getChain (_entry) {
+    return { data: [] }
   }
 
   async getJuras (_entry) {
+    return { data: 1 }
+  }
+
+  async getCredo (_entry) {
     return { data: 1 }
   }
 

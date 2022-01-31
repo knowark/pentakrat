@@ -36,7 +36,7 @@ export class AnalyzeComponent extends Component {
 
   async load () {
     const informer = this.resolve('NetworkInformer')
-    this.supportLevel = (await informer.getSupportLevel({})).data
+    this.supportLevel = (await informer.getLevel({})).data
     this.juras = (await informer.getJuras({})).data
     this.render()
   }
