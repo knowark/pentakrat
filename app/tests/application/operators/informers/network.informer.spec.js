@@ -37,6 +37,12 @@ describe('NetworkInformer', function () {
     expect(result.data).toBe(0)
   })
 
+  it('gets the juras total supply', async () => {
+    const result = await informer.getSupply({})
+
+    expect(result.data).toBe(0)
+  })
+
   it('gets the chain of trust of the user', async () => {
     const result = await informer.getChain({})
 

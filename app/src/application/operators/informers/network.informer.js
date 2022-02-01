@@ -25,4 +25,8 @@ export class NetworkInformer {
   async getJuras (_entry) {
     return { data: await this.networkProvider.juras() }
   }
+
+  async getSupply (_entry) {
+    return { data: await this.networkProvider.supply() }
+  }
 }

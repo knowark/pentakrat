@@ -17,6 +17,11 @@ export class BlockchainNetworkProvider extends NetworkProvider {
     return this._signer
   }
 
+  get contract () {
+    const missionAddress = this.global.config.missionAddress
+    return this.ethers.Contract(missionAddress, abi, this.signer)
+  }
+
   async connect () {
     if (!this.global.ethereum) {
       throw new Error('You need Metamask to connect to the blockchain.')
@@ -31,16 +36,41 @@ export class BlockchainNetworkProvider extends NetworkProvider {
   }
 
   async trust (entry) {
-    const missionAddress = this.global.config.missionAddress
-    const contract = new this.ethers.Contract(
-      missionAddress, abi, this.signer)
-    await contract.establishTrust(entry.address, entry.proposal)
+    await this.contract.trust(
+      entry.address, entry.proposal)
   }
 
-  async trustLevel () {
-    const missionAddress = this.global.config.missionAddress
-    const contract = new this.ethers.Contract(
-      missionAddress, abi, this.signer)
-    return (await contract.getTrustLevel(this.signer.getAddress())).toNumber()
+  async distrust () {
+    await this.contract.distrust()
+  }
+
+  async believe () {
+    await this.contract.believe()
+  }
+
+  async level () {
+    return (await this.contract.getLevel(
+      this.signer.getAddress())).toNumber()
+  }
+
+  async chain () {
+    const response = await this.contract.getChain(
+      this.signer.getAddress())
+    return []
+  }
+
+  async juras () {
+    return (await this.contract.getJuras(
+      this.signer.getAddress())).toNumber()
+  }
+
+  async credo () {
+    return (await this.contract.getCredo(
+      this.signer.getAddress())).toNumber()
+  }
+
+  async supply () {
+    return (await this.contract.jurasTotalSupply(
+      this.signer.getAddress())).toNumber()
   }
 }

@@ -25,13 +25,25 @@ describe('BlockchainNetworkProvider', function () {
         }))
       },
       Contract: jest.fn().mockImplementation((address, abi, signer) => ({
-        establishTrust: jest.fn().mockImplementation((address, proposal) => {
-        }),
-        getTrustLevel: jest.fn().mockImplementation(() => ({
-          toNumber: () => 99
-        }))
+        trust: jest.fn().mockImplementation((address, proposal) => {}),
+        distrust: jest.fn().mockImplementation(() => {}),
+        believe: jest.fn().mockImplementation(() => {}),
+        getLevel: jest.fn().mockImplementation(() => ({
+          toNumber: () => 3
+        })),
+        getJuras: jest.fn().mockImplementation(() => ({
+          toNumber: () => 1000
+        })),
+        getCredo: jest.fn().mockImplementation(() => ({
+          toNumber: () => 5
+        })),
+        getChain: jest.fn().mockImplementation(() => ({
+          toNumber: () => []
+        })),
+        jurasTotalSupply: jest.fn().mockImplementation(() => ({
+          toNumber: () => 7000
+        })),
       }))
-
       
     }
     provider = new BlockchainNetworkProvider({
@@ -93,17 +105,70 @@ describe('BlockchainNetworkProvider', function () {
     await provider.trust(entry)
 
     expect(provider.ethers.Contract.mock.calls[0][0]).toBe("MISSION_ADDRESS")
-    const establishTrust = (
-      provider.ethers.Contract.mock.results[0].value.establishTrust)
-    expect(establishTrust.mock.calls[0]).toEqual(
+    const trust = (
+      provider.ethers.Contract.mock.results[0].value.trust)
+    expect(trust.mock.calls[0]).toEqual(
       [entry.address, entry.proposal])
   })
+
+  it('removes the trust put on a leader', async () => {
+    await provider.connect()
+
+    await provider.distrust()
+
+    const distrust = (
+      provider.ethers.Contract.mock.results[0].value.distrust)
+    expect(distrust.mock.calls[0]).toEqual([])
+  })
+
+  it('believes in the trusted leader propsal', async () => {
+    await provider.connect()
+
+    await provider.believe()
+
+    const believe = (
+      provider.ethers.Contract.mock.results[0].value.believe)
+    expect(believe.mock.calls[0]).toEqual([])
+  })
+
 
   it('gets the trust level of a leader', async () => {
     await provider.connect()
 
-    const trustLevel = await provider.trustLevel()
+    const level = await provider.level()
 
-    expect(trustLevel).toEqual(99)
+    expect(level).toEqual(3)
+  })
+
+  it('gets the juras of a leader', async () => {
+    await provider.connect()
+
+    const juras = await provider.juras()
+
+    expect(juras).toEqual(1000)
+  })
+
+  it('gets the credo of a leader', async () => {
+    await provider.connect()
+
+    const juras = await provider.credo()
+
+    expect(juras).toEqual(5)
+  })
+
+  it("gets the mission's juras total supply", async () => {
+    await provider.connect()
+
+    const juras = await provider.supply()
+
+    expect(juras).toEqual(7000)
+  })
+
+  it('gets the supporter trust chain', async () => {
+    await provider.connect()
+
+    const chain = await provider.chain()
+
+    expect(Array.isArray(chain)).toBeTruthy()
   })
 })

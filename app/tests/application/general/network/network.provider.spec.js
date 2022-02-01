@@ -19,6 +19,7 @@ describe('NetworkProvider', function () {
       { name: 'level', arguments: {} },
       { name: 'credo', arguments: {} },
       { name: 'juras', arguments: {} },
+      { name: 'supply', arguments: {} },
     ]
 
     for (const method of methods) {

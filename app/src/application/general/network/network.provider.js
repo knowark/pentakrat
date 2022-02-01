@@ -35,6 +35,10 @@ export class NetworkProvider {
   async juras () {
     throw new Error('Not implemented')
   }
+
+  async supply () {
+    throw new Error('Not implemented')
+  }
 }
 
 export class MemoryNetworkProvider extends NetworkProvider {
@@ -48,6 +52,7 @@ export class MemoryNetworkProvider extends NetworkProvider {
     this._level = 0
     this._credo = 0
     this._juras = 0
+    this._supply = 0
     this._chain = [
       { level: 0, holder: '', proposal: '' }
     ]
@@ -87,5 +92,9 @@ export class MemoryNetworkProvider extends NetworkProvider {
 
   async juras () {
     return this._juras
+  }
+
+  async supply () {
+    return this._supply
   }
 }
