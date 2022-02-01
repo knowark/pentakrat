@@ -8,7 +8,7 @@ export class NetworkInformer {
 
   async getLevel (_entry) {
     const trustLevel = await this.networkProvider.trustLevel()
-    return { data: trustLevel.toNumber() }
+    return { data: trustLevel }
   }
 
   async getChain (_entry) {

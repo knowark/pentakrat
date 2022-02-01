@@ -34,6 +34,8 @@ describe('SupportComponent', function () {
   })
 
   it('opens up a trust modal on trust clicked', () => {
+    component.state.level = 0
+    component.render()
     const button = component.select('[data-trust]')
     button.click()
 
@@ -42,6 +44,8 @@ describe('SupportComponent', function () {
   })
 
   it('creates a trust bond from given code', async () => {
+    component.state.level = 0
+    component.render()
     let givenEntry = null
     component.networkManager = {
       trust: (entry) => { givenEntry = entry }
@@ -63,5 +67,13 @@ describe('SupportComponent', function () {
         proposal: 'https://proposal.example.com'
       }
     })
+  })
+
+  it('renders the users credo if it has already believed', () => {
+    component.state.credo = 5
+    component.render()
+    const paragraph = component.select('[data-credo]')
+
+    expect(paragraph.textContent).toEqual('CREDO #: 5')
   })
 })

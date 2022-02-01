@@ -27,7 +27,9 @@ describe('BlockchainNetworkProvider', function () {
       Contract: jest.fn().mockImplementation((address, abi, signer) => ({
         establishTrust: jest.fn().mockImplementation((address, proposal) => {
         }),
-        getTrustLevel: jest.fn().mockImplementation(() => 99)
+        getTrustLevel: jest.fn().mockImplementation(() => ({
+          toNumber: () => 99
+        }))
       }))
 
       

@@ -41,6 +41,6 @@ export class BlockchainNetworkProvider extends NetworkProvider {
     const missionAddress = this.global.config.missionAddress
     const contract = new this.ethers.Contract(
       missionAddress, abi, this.signer)
-    return await contract.getTrustLevel(this.signer.getAddress())
+    return (await contract.getTrustLevel(this.signer.getAddress())).toNumber()
   }
 }

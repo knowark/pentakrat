@@ -27,7 +27,7 @@ export class SupportComponent extends Component {
     if (this.state.credo) {
       this.content = /* html */ `
       <ark-card class="${tag}__content" title="SUPPORT">
-        <p>CREDO #: ${this.credo}</p>
+        <p data-credo>CREDO #: ${this.state.credo}</p>
       </ark-card>
       `
     } else if (this.state.level) {
@@ -89,6 +89,8 @@ export class SupportComponent extends Component {
   async load () {
     this.state.level = (
       await this.networkInformer.getLevel({})).data
+
+    console.log('STate level>>>', this.state.level)
     this.state.credo = 0
     this.render()
   }
