@@ -27,14 +27,18 @@ export class SupportComponent extends Component {
     if (this.state.credo) {
       this.content = /* html */ `
       <ark-card class="${tag}__content" title="SUPPORT">
-        <p data-credo>CREDO #: ${this.state.credo}</p>
+        <h2 data-credo>CREDO #: ${this.state.credo}</h2>
       </ark-card>
       `
     } else if (this.state.level) {
       this.content = /* html */ `
       <ark-card class="${tag}__content" title="SUPPORT">
-        <ark-button data-distrust background="primary" color="secondary"
-          listen on-click="onDistrust">DISTRUST</ark-button>
+        <div class="${tag}__actions">
+          <ark-button data-distrust background="primary" color="secondary"
+            listen on-click="onDistrust">DISTRUST</ark-button>
+          <ark-button data-believe background="secondary" color="primary"
+            listen on-click="onBelieve">BELIEVE</ark-button>
+        </div>
       </ark-card>
       `
     } else {
@@ -62,11 +66,6 @@ export class SupportComponent extends Component {
         </ark-button>
       </ark-modal>
       `
-      //this.content = `
-      //<ark-card class="${tag}__content" title="SUPPORT">
-        //<ark-spinner type="rect" size="2"></ark-spinner>
-      //</ark-card>
-      //`
     }
     return super.render()
   }
@@ -82,6 +81,11 @@ export class SupportComponent extends Component {
   async onDistrust (event) {
     event.stopPropagation()
     await this.networkManager.distrust({})
+  }
+
+  async onBelieve (event) {
+    event.stopPropagation()
+    await this.networkManager.believe({})
   }
 
   async onAccept (event) {
@@ -108,6 +112,12 @@ const styles = `
 .${tag} .ark-card__body {
   display: grid;
   justify-items: center;
+}
+.${tag}__actions {
+  display: grid;
+  gap: 2rem;
+  justify-items: center;
+  align-items: center;
 }
 .${tag} dl {
   display: grid;

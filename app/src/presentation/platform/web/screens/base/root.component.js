@@ -74,6 +74,7 @@ export class RootComponent extends Component {
       confirmButtonBackground: 'success',
       showCancelButton: false
     }, this)
+    await new Promise(resolve => setTimeout(resolve, 1000))
     this.render()
   }
 
@@ -88,9 +89,12 @@ export class RootComponent extends Component {
   /** @param {CustomEvent} event */
   onError (event) {
     event.stopPropagation()
+    console.log('Error:', event)
+    const message = (event.detail.message
+      + ' ' + (event.detail?.data?.message || ''))
     Alert.launch({
       title: 'Error',
-      text: event.detail.message,
+      text: message,
       confirmButtonBackground: 'danger',
       showCancelButton: false
     }, this)

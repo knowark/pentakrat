@@ -34,10 +34,12 @@ describe('AnalyzeComponent', function () {
 
   it('shows the level of support and juras', () => {
     component.state.level = 3
-    component.state.juras = 9000
+    component.state.juras = 1000
+    component.state.supply = 9000
     component.render()
     expect(component.select('[data-level]').textContent).toEqual('3')
-    expect(component.select('[data-juras]').textContent).toEqual('9000')
+    expect(component.select(
+      '[data-juras]').textContent).toContain('1000 / 9000')
   })
 
   it('shows a default message when no trust has been established', () => {

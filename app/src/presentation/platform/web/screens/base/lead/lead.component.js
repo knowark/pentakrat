@@ -5,20 +5,26 @@ import { Component } from 'base/component'
 
 const tag = 'lead-main'
 export class LeadComponent extends Component {
-  init (context) {
+  init (context = {}) {
+    this.global = context.global || globalThis
     this.state = {
       address: 'NOT CONNECTED',
-      proposal: ''
+      proposal: this.global.localStorage.getItem('proposal') || ''
     }
     this.networkInformer = this.resolve('NetworkInformer')
     return super.init(context)
   }
 
+  set proposal(value) {
+    this.global.localStorage.setItem('proposal', value)
+    this.state.proposal = value
+  }
+
   render () {
     this.content = /* html */ `
     <ark-card class="${tag}__content" title="LEAD">
-      <ark-input listen on-alter="{{ state.proposal }}"
-        placeholder="Proposal"></ark-input>
+      <ark-input listen on-alter="{{ proposal }}"
+        placeholder="Proposal" value="${this.state.proposal}"></ark-input>
       <p class=${tag}_address>${this.state.address}</p>
       <ark-button data-generate background="primary" color="secondary"
         listen on-click="onGenerate">GENERATE</ark-button>

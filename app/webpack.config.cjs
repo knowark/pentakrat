@@ -29,7 +29,7 @@ module.exports = (env, argv) => {
         ARK_DESIGN: 'ark',
         FACTORY: 'blockchain',
         VERSION: require('./package.json').version,
-        MISSION_ADDRESS: "0xF950D26314d3526b778B2E479916139e1479df45",
+        MISSION_ADDRESS: "0xB5a1f78a494B312efD7c74A47D7d0FE0b64b9572",
       }),
       new CopyPlugin({
         patterns: ['src/.htaccess']

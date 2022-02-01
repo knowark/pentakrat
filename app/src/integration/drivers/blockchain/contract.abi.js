@@ -11,6 +11,11 @@ export const abi = `
         "internalType": "string",
         "name": "statement",
         "type": "string"
+      },
+      {
+        "internalType": "uint256",
+        "name": "rate",
+        "type": "uint256"
       }
     ],
     "stateMutability": "nonpayable",
@@ -18,32 +23,14 @@ export const abi = `
   },
   {
     "inputs": [],
-    "name": "breakTrust",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "leader",
-        "type": "address"
-      },
-      {
-        "internalType": "string",
-        "name": "proposal",
-        "type": "string"
-      }
-    ],
-    "name": "establishTrust",
+    "name": "believe",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
   },
   {
     "inputs": [],
-    "name": "getJurasForAddresss",
+    "name": "distrust",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -56,12 +43,22 @@ export const abi = `
         "type": "address"
       }
     ],
-    "name": "getTrustChain",
+    "name": "getChain",
     "outputs": [
       {
-        "internalType": "bytes32[]",
+        "internalType": "uint256[]",
         "name": "",
-        "type": "bytes32[]"
+        "type": "uint256[]"
+      },
+      {
+        "internalType": "address[]",
+        "name": "",
+        "type": "address[]"
+      },
+      {
+        "internalType": "string[]",
+        "name": "",
+        "type": "string[]"
       }
     ],
     "stateMutability": "view",
@@ -75,7 +72,58 @@ export const abi = `
         "type": "address"
       }
     ],
-    "name": "getTrustLevel",
+    "name": "getCredo",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "leader",
+        "type": "address"
+      }
+    ],
+    "name": "getJuras",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "supporter",
+        "type": "address"
+      }
+    ],
+    "name": "getLevel",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "jurasTotalSupply",
     "outputs": [
       {
         "internalType": "uint256",
@@ -117,8 +165,19 @@ export const abi = `
     "type": "function"
   },
   {
-    "inputs": [],
-    "name": "transferToken",
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "leader",
+        "type": "address"
+      },
+      {
+        "internalType": "string",
+        "name": "proposal",
+        "type": "string"
+      }
+    ],
+    "name": "trust",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"

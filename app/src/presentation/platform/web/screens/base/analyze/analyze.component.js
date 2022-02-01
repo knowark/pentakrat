@@ -7,7 +7,8 @@ export class AnalyzeComponent extends Component {
   init (context = {}) {
     this.state = {
       level: 0,
-      juras: 0
+      juras: 0,
+      supply: 0
     }
     return super.init()
   }
@@ -23,12 +24,13 @@ export class AnalyzeComponent extends Component {
       this.content = /* html */ `
       <ark-card class="${tag}__content" title="ANALYZE">
         <div class=${tag}__stat>
-          <h2 class="${tag}__stat-title">SUPPORT LEVEL</h2>
+          <h2 class="${tag}__stat-title">LEVEL</h2>
           <h3 class="${tag}__stat-number" data-level>${this.state.level}</h3>
         </div>
         <div class=${tag}__stat>
           <h2 class="${tag}__stat-title">JURAS</h2>
-          <h3 class="${tag}__stat-number" data-juras>${this.state.juras}</h3>
+          <h3 class="${tag}__stat-number" data-juras>
+            ${this.state.juras} / ${this.state.supply}</h3>
         </div>
       </ark-card>
       `
@@ -40,6 +42,7 @@ export class AnalyzeComponent extends Component {
     const informer = this.resolve('NetworkInformer')
     this.state.level = (await informer.getLevel({})).data
     this.state.juras = (await informer.getJuras({})).data
+    this.state.supply = (await informer.getSupply({})).data
     this.render()
   }
 }
