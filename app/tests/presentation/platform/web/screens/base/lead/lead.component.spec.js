@@ -39,7 +39,7 @@ describe('LeadComponent', function () {
 
     const textarea = component.select('[data-code]')
     expect(textarea.textContent).toEqual(
-      'eyJhZGRyZXNzIjoiUFVCTElDX0FERFJFU1MiLCJwcm9wb3NhbCI6IiJ9'
+      'eyJhZGRyZXNzIjoiIiwicHJvcG9zYWwiOiIifQ=='
     )
   })
 })

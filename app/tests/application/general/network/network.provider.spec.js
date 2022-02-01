@@ -11,10 +11,14 @@ describe('NetworkProvider', function () {
   it('defines a general interface', async () => {
     const methods = [
       { name: 'connect', arguments: {} },
+      { name: 'address', arguments: {} },
       { name: 'trust', arguments: {} },
       { name: 'distrust', arguments: {} },
-      { name: 'address', arguments: {} },
-      { name: 'trustLevel', arguments: {} }
+      { name: 'believe', arguments: {} },
+      { name: 'chain', arguments: {} },
+      { name: 'level', arguments: {} },
+      { name: 'credo', arguments: {} },
+      { name: 'juras', arguments: {} },
     ]
 
     for (const method of methods) {
@@ -41,7 +45,7 @@ describe('MemoryNetworkProvider', function () {
   it('connects to the network', async () => {
     await provider.connect()
 
-    expect(provider._connected).toBeTruthy()
+    expect(provider._connect).toBeTruthy()
   })
 
   it('establishes trust between supporters and leaders', async () => {
@@ -54,15 +58,47 @@ describe('MemoryNetworkProvider', function () {
     expect(provider._trust).toEqual(trust)
   })
 
+  it('removes the trust put on a leader', async () => {
+    await provider.distrust()
+
+    expect(provider._distrust).toEqual(true)
+  })
+
+  it('belives in the proposal of the leader', async () => {
+    await provider.believe()
+
+    expect(provider._believe).toEqual(true)
+  })
+
   it('gets the address of the connected user', async () => {
     const address = await provider.address()
 
-    expect(address.length).toBeTruthy()
+    expect(address).toEqual('')
   })
 
   it('gets the trust level of the connected user', async () => {
-    const trustLevel = await provider.trustLevel()
+    const trustLevel = await provider.level()
 
-    expect(trustLevel).toBe(1)
+    expect(trustLevel).toBe(0)
+  })
+
+  it('gets the credo of the connected user', async () => {
+    const credo = await provider.credo()
+
+    expect(credo).toBe(0)
+  })
+
+  it('gets the juras of the connected user', async () => {
+    const juras = await provider.juras()
+
+    expect(juras).toBe(0)
+  })
+
+  it('gets the chain of trust of the connected user', async () => {
+    const chain = await provider.chain()
+
+    expect(chain).toEqual([
+      { level: 0, holder: '', proposal: '' }
+    ])
   })
 })

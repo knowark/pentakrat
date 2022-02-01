@@ -16,7 +16,7 @@ describe('NetworkManager', function () {
   it('connects to the network through a provider', async () => {
     await manager.connect({})
 
-    expect(manager.networkProvider._connected).toBeTruthy()
+    expect(manager.networkProvider._connect).toBeTruthy()
   })
 
   it('establishes a new trust bond between', async () => {
@@ -29,5 +29,17 @@ describe('NetworkManager', function () {
     await manager.trust(entry)
 
     expect(manager.networkProvider._trust).toEqual(entry.data)
+  })
+
+  it('removes the trust bond on the leader', async () => {
+    await manager.distrust({})
+
+    expect(manager.networkProvider._distrust).toBe(true)
+  })
+
+  it('believes on the proposal of the leader', async () => {
+    await manager.believe({})
+
+    expect(manager.networkProvider._believe).toBe(true)
   })
 })

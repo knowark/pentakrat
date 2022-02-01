@@ -5,16 +5,18 @@ import { Component } from 'base/component'
 const tag = 'analyze-main'
 export class AnalyzeComponent extends Component {
   init (context = {}) {
-    this.supportLevel = context.supportLevel || 0
-    this.juras = context.juras || 0
+    this.state = {
+      level: 0,
+      juras: 0
+    }
     return super.init()
   }
 
   render () {
-    if (!this.supportLevel) {
+    if (!this.state.level) {
       this.content = /* html */ `
       <ark-card class="${tag}__content" title="ANALYZE">
-        <h1>No trust bonds have been established yet.</h1>
+        <h1 data-notrust>No trust bonds have been established yet.</h1>
       </ark-card>
       `
     } else {
@@ -22,11 +24,11 @@ export class AnalyzeComponent extends Component {
       <ark-card class="${tag}__content" title="ANALYZE">
         <div class=${tag}__stat>
           <h2 class="${tag}__stat-title">SUPPORT LEVEL</h2>
-          <h3 class="${tag}__stat-number">${this.supportLevel}</h3>
+          <h3 class="${tag}__stat-number" data-level>${this.state.level}</h3>
         </div>
         <div class=${tag}__stat>
           <h2 class="${tag}__stat-title">JURAS</h2>
-          <h3 class="${tag}__stat-number">${this.juras}</h3>
+          <h3 class="${tag}__stat-number" data-juras>${this.state.juras}</h3>
         </div>
       </ark-card>
       `
@@ -36,8 +38,8 @@ export class AnalyzeComponent extends Component {
 
   async load () {
     const informer = this.resolve('NetworkInformer')
-    this.supportLevel = (await informer.getLevel({})).data
-    this.juras = (await informer.getJuras({})).data
+    this.state.level = (await informer.getLevel({})).data
+    this.state.juras = (await informer.getJuras({})).data
     this.render()
   }
 }

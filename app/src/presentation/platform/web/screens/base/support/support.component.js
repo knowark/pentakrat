@@ -79,6 +79,11 @@ export class SupportComponent extends Component {
     this.select('ark-modal').open()
   }
 
+  async onDistrust (event) {
+    event.stopPropagation()
+    await this.networkManager.distrust({})
+  }
+
   async onAccept (event) {
     event.stopPropagation()
     const data = this.state.trust
@@ -89,9 +94,8 @@ export class SupportComponent extends Component {
   async load () {
     this.state.level = (
       await this.networkInformer.getLevel({})).data
-
-    console.log('STate level>>>', this.state.level)
-    this.state.credo = 0
+    this.state.credo = (
+      await this.networkInformer.getCredo({})).data
     this.render()
   }
 }

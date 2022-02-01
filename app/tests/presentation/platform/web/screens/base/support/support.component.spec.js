@@ -76,4 +76,29 @@ describe('SupportComponent', function () {
 
     expect(paragraph.textContent).toEqual('CREDO #: 5')
   })
+
+  it('renders the distrust button on trusted but not believed ', () => {
+    component.state.credo = 0
+    component.state.level = 3
+    component.render()
+
+    const button = component.select('[data-distrust]')
+
+    expect(button.textContent).toBeTruthy()
+  })
+
+  it('distrust a leader on button clicked', async () => {
+    component.state.level = 1
+    component.render()
+    let called = null
+    component.networkManager = {
+      distrust: () => { called = true }
+    }
+    const button = component.select('[data-distrust]')
+
+    button.click()
+    await setTimeout(0)
+
+    expect(called).toBeTruthy()
+  })
 })

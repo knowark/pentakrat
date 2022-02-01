@@ -33,7 +33,17 @@ describe('AnalyzeComponent', function () {
   })
 
   it('shows the level of support and juras', () => {
-    expect(component.supportLevel).toEqual(1)
-    expect(component.juras).toEqual(1)
+    component.state.level = 3
+    component.state.juras = 9000
+    component.render()
+    expect(component.select('[data-level]').textContent).toEqual('3')
+    expect(component.select('[data-juras]').textContent).toEqual('9000')
+  })
+
+  it('shows a default message when no trust has been established', () => {
+    const message = component.select('[data-notrust]').textContent
+    expect(message).toEqual(
+      'No trust bonds have been established yet.'
+    )
   })
 })

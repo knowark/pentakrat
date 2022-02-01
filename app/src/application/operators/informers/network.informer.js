@@ -6,24 +6,23 @@ export class NetworkInformer {
     this.networkProvider = networkProvider
   }
 
+  async getAddress (_entry) {
+    return { data: await this.networkProvider.address() }
+  }
+
   async getLevel (_entry) {
-    const trustLevel = await this.networkProvider.trustLevel()
-    return { data: trustLevel }
+    return { data: await this.networkProvider.level() }
   }
 
   async getChain (_entry) {
-    return { data: [] }
-  }
-
-  async getJuras (_entry) {
-    return { data: 1 }
+    return { data: await this.networkProvider.chain() }
   }
 
   async getCredo (_entry) {
-    return { data: 1 }
+    return { data: await this.networkProvider.credo() }
   }
 
-  async getAddress (_entry) {
-    return { data: await this.networkProvider.address() }
+  async getJuras (_entry) {
+    return { data: await this.networkProvider.juras() }
   }
 }
