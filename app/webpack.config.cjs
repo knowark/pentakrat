@@ -7,6 +7,7 @@ const CopyPlugin = require('copy-webpack-plugin')
 
 module.exports = (env, argv) => {
   const devMode = argv.mode === 'development'
+  const mission = '0x5173e80d3340D49a1D99D8718969A7E74C1f49a0'
 
   const config = {
     mode: argv.mode,
@@ -29,7 +30,7 @@ module.exports = (env, argv) => {
         ARK_DESIGN: 'ark',
         FACTORY: 'blockchain',
         VERSION: require('./package.json').version,
-        MISSION_ADDRESS: "0xB5a1f78a494B312efD7c74A47D7d0FE0b64b9572",
+        MISSION_ADDRESS: mission,
       }),
       new CopyPlugin({
         patterns: ['src/.htaccess']
